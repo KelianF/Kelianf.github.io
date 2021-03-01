@@ -328,6 +328,13 @@ COMPILERS = {
     # "pandoc": ['.rst', '.md', '.txt'],
 }
 
+# Add the orgmode compiler to your COMPILERS dict.
+COMPILERS["orgmode"] = ('.org',)
+
+# Add org files to your POSTS, PAGES
+POSTS = POSTS + (("posts/*.org", "posts", "post.tmpl"),)
+PAGES = PAGES + (("stories/*.org", "stories", "story.tmpl"),)
+
 # Enable reST directives that insert the contents of external files such
 # as "include" and "raw." This maps directly to the docutils file_insertion_enabled
 # config. See: https://docutils.sourceforge.io/docs/user/config.html#file-insertion-enabled
