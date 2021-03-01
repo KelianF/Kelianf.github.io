@@ -1,0 +1,4 @@
+Sitemap: https://kelianf.github.io/sitemapindex.xml
+
+User-Agent: *
+Host: kelianf.github.io

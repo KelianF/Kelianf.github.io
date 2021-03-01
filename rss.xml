@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS</title><link>https://kelianf.github.io/</link><description>On a quest for understanding.</description><atom:link href="https://kelianf.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Mon, 01 Mar 2021 03:49:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Test</title><link>https://kelianf.github.io/posts/test/</link><dc:creator>Kelian</dc:creator><description>&lt;p&gt;
+Write your post here.
+&lt;/p&gt;
+
+&lt;p&gt;
+This is a test for my first blog using Nikola on Emacs org-mode.
+Let's see how it goes.
+&lt;/p&gt;</description><guid>https://kelianf.github.io/posts/test/</guid><pubDate>Mon, 01 Mar 2021 03:36:22 GMT</pubDate></item></channel></rss>
