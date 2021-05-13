@@ -1,0 +1,46 @@
+
+#+BEGIN_COMMENT
+.. title: Trachtenberg
+.. slug: trachtenberg
+.. date: 2021-05-08 23:09:13 UTC-04:00
+.. tags: Mathematics
+.. category: Mathematics
+.. link: 
+.. description: 
+.. type: text
+
+#+END_COMMENT
+
+
+* Trachtenberg Method or how to overcomplicate multiplications
+
+The Trachtenberg system is a method for rapid mental calculation developped by Jakow Trachtenberg.
+
+Here below we represent the algos for multiplication going from 5 to 12.
+
+Multiplication by 5
+
+
+Multiplication by 6
+
+
+Multiplication by 7
+
+
+Multiplication by 8
+
+
+Multiplication by 9
+
+
+Multiplication by 11
+
+
+Multiplication by 12
+
+
+
+
+
+
+

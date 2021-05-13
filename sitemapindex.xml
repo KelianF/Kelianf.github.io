@@ -6,15 +6,23 @@
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
                         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
  <sitemap>
+  <loc>https://kelianf.github.io/categories/cat_mathematics.xml</loc>
+  <lastmod>2021-05-13T08:33:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://kelianf.github.io/categories/mathematics.xml</loc>
+  <lastmod>2021-05-13T08:33:00Z</lastmod>
+ </sitemap>
+ <sitemap>
   <loc>https://kelianf.github.io/galleries/rss.xml</loc>
   <lastmod>2021-03-01T03:24:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://kelianf.github.io/rss.xml</loc>
-  <lastmod>2021-03-01T03:49:00Z</lastmod>
+  <lastmod>2021-05-13T08:33:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://kelianf.github.io/sitemap.xml</loc>
-  <lastmod>2021-03-01T03:49:00Z</lastmod>
+  <lastmod>2021-05-13T08:33:00Z</lastmod>
  </sitemap>
 </sitemapindex>

@@ -15,11 +15,19 @@
  </url>
  <url>
   <loc>https://kelianf.github.io/archive.html</loc>
-  <lastmod>2021-03-01T03:47:00Z</lastmod>
+  <lastmod>2021-05-13T08:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://kelianf.github.io/categories/</loc>
-  <lastmod>2021-03-01T03:24:00Z</lastmod>
+  <lastmod>2021-05-13T08:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://kelianf.github.io/categories/cat_mathematics/</loc>
+  <lastmod>2021-05-13T08:33:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://kelianf.github.io/categories/mathematics/</loc>
+  <lastmod>2021-05-13T08:33:00Z</lastmod>
  </url>
  <url>
   <loc>https://kelianf.github.io/galleries/</loc>
@@ -32,5 +40,9 @@
  <url>
   <loc>https://kelianf.github.io/posts/test/</loc>
   <lastmod>2021-03-01T03:49:00Z</lastmod>
+ </url>
+ <url>
+  <loc>https://kelianf.github.io/posts/trachtenberg/</loc>
+  <lastmod>2021-05-13T08:33:00Z</lastmod>
  </url>
 </urlset>

@@ -1,5 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS</title><link>https://kelianf.github.io/</link><description>On a quest for understanding.</description><atom:link href="https://kelianf.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Mon, 01 Mar 2021 03:49:00 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Test</title><link>https://kelianf.github.io/posts/test/</link><dc:creator>Kelian</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS</title><link>https://kelianf.github.io/</link><description>On a quest for understanding.</description><atom:link href="https://kelianf.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Thu, 13 May 2021 08:33:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Trachtenberg</title><link>https://kelianf.github.io/posts/trachtenberg/</link><dc:creator>Kelian</dc:creator><description>&lt;div id="outline-container-org318cc22" class="outline-2"&gt;
+&lt;h2 id="org318cc22"&gt;Trachtenberg Method or how to overcomplicate multiplications&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org318cc22"&gt;
+&lt;p&gt;
+The Trachtenberg system is a method for rapid mental calculation developped by Jakow Trachtenberg.
+&lt;/p&gt;
+
+&lt;p&gt;
+Here below we represent the algos for multiplication going from 5 to 12.
+&lt;/p&gt;
+
+&lt;p&gt;
+Multiplication by 5
+&lt;/p&gt;
+
+
+&lt;p&gt;
+Multiplication by 6
+&lt;/p&gt;
+
+
+&lt;p&gt;
+Multiplication by 7
+&lt;/p&gt;
+
+
+&lt;p&gt;
+Multiplication by 8
+&lt;/p&gt;
+
+
+&lt;p&gt;
+Multiplication by 9
+&lt;/p&gt;
+
+
+&lt;p&gt;
+Multiplication by 11
+&lt;/p&gt;
+
+
+&lt;p&gt;
+Multiplication by 12
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>Mathematics</category><guid>https://kelianf.github.io/posts/trachtenberg/</guid><pubDate>Sun, 09 May 2021 03:09:13 GMT</pubDate></item><item><title>Test</title><link>https://kelianf.github.io/posts/test/</link><dc:creator>Kelian</dc:creator><description>&lt;p&gt;
 Write your post here.
 &lt;/p&gt;
 
