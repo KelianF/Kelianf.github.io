@@ -32,6 +32,8 @@ for MultiplyBy5(xyz):
 
 #+end_src
 
+Here was the code snippet
+
 Multiplication by 6
 
 
