@@ -20,6 +20,17 @@ Here below we represent the algos for multiplication going from 5 to 12.
 
 Multiplication by 5
 
+#+begin_src python
+for MultiplyBy5(xyz):
+    xyz = str(xyz)
+    res = ""
+    if xyz[-1]%2:
+        res+="0"
+    else:
+        res+="5"
+
+
+#+end_src
 
 Multiplication by 6
 

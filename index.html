@@ -84,9 +84,9 @@
                 </p>
 </div>
             </header><div class="e-content entry-content">
-                    <div id="outline-container-org318cc22" class="outline-2">
-<h2 id="org318cc22">Trachtenberg Method or how to overcomplicate multiplications</h2>
-<div class="outline-text-2" id="text-org318cc22">
+                    <div id="outline-container-org589eaac" class="outline-2">
+<h2 id="org589eaac">Trachtenberg Method or how to overcomplicate multiplications</h2>
+<div class="outline-text-2" id="text-org589eaac">
 <p>
 The Trachtenberg system is a method for rapid mental calculation developped by Jakow Trachtenberg.
 </p>
@@ -99,6 +99,14 @@ Here below we represent the algos for multiplication going from 5 to 12.
 Multiplication by 5
 </p>
 
+<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">MultiplyBy5</span><span class="p">(</span><span class="n">xyz</span><span class="p">):</span>
+    <span class="n">xyz</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">xyz</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="k">if</span> <span class="n">xyz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">%</span><span class="mi">2</span><span class="p">:</span>
+	<span class="n">res</span><span class="o">+=</span><span class="s2">"0"</span>
+    <span class="k">else</span><span class="p">:</span>
+	<span class="n">res</span><span class="o">+=</span><span class="s2">"5"</span>
+</pre></div>
 
 <p>
 Multiplication by 6
