@@ -17,11 +17,114 @@
 The Trachtenberg system is a method for rapid mental calculation developped by Jakow Trachtenberg.
 
 Here below we represent the algos for multiplication going from 5 to 12.
+So these 'hacks' should be used for accelerating mental calculations and help making sure you know at least the multiplication table for the first 11 numbers
+(Which is the very least you should know according to A. Borovik, whcih recommend to know this, as well as the square of positive integers up to 31^2, the cubes of positive integer up to 11^3 and the powers of 2 up to 2^10).
 
-Multiplication by 5
+But What is certain, is that these method was never intendend to be used with a numerical implementation, which since any computer can do any of these multiplication efficiently would be stupid to implement.. so let's do it.
+
+
+** Multiplication by 11
+
+Probably the most known solution, it basically is putting the addition of the two 'chiffre' of a 'nombre' inbweeten them. (Pardon my french, but the difference between digit and numbers in that language). 
 
 #+begin_src python
-for MultiplyBy5(xyz):
+def MultiplyBy11(x):
+    x = str(x)
+    res = ""
+    prev = 0
+
+    Cache = 0
+    for z in x[::-1]:
+        add = str(int(z) + int(prev) + int(Cache))
+        res = add[-1] + res
+        if len(add) == 2: Cache = add[0] 
+        else: Cache = "0"
+        prev = z
+    z = str(int(z)+int(Cache))
+    res = z + res
+    return int(res)
+
+def MultiplyBy11_Bis(x):
+    x = str(x)
+    y = x + "0"
+    return int(x) + int(y)
+
+x = 6573
+print(x * 11)
+>>> 72303
+
+MultiplyBy11(x)
+>>> 72303
+
+MultiplyBy11_Bis(x)
+>>> 72303
+#+end_src
+
+
+** Multiplication by 12
+
+#+begin_src python
+def MultiplyBy12(x):
+    x = str(x)
+    res = ""
+    prev = 0
+
+    Cache = 0
+    for z in x[::-1]:
+        add = str(int(z) * 2 + int(prev) + int(Cache)) # Only difference is here
+        res = add[-1] + res
+        if len(add) == 2: Cache = add[0] 
+        else: Cache = "0"
+        prev = z
+    z = str(int(z)+int(Cache))
+    res = z + res
+    return int(res)
+
+def MultiplyBy12_Bis(x):
+    y = str(x) + "0"
+    x = str(x * 2)
+    return int(x) + int(y)
+
+x = 3729
+print(x * 12)
+>>> 44748
+
+MultiplyBy12(x)
+>>> 44748
+
+MultiplyBy12_Bis(x)
+>>> 44748
+#+end_src
+
+
+** Multiplication by 10
+
+Yeah, what I am doing is stupid, but not that stupid.
+
+** Multiplication by 5
+
+#+begin_src python
+def MultiplyBy5(x):
+    x = str(x)
+    res = ""
+    prev = 0
+
+    for z in x[::-1]:
+        z = int(z)
+        if z%2:
+            res = str(5 + int(prev/2)) + res
+        else:
+            res = str(int(prev/2)) + res
+        prev = z
+    res = str(int(prev/2)) + res
+    return int(res)
+
+x = 8265
+x*5
+>>> 41325
+
+MultiplyBy5(x)
+>>> 41325for MultiplyBy5(xyz):
     xyz = str(xyz)
     res = ""
     if xyz[-1]%2:
@@ -32,26 +135,144 @@ for MultiplyBy5(xyz):
 
 #+end_src
 
-Here was the code snippet
 
-Multiplication by 6
+** Multiplication by 6
+
+#+begin_src python
+def MultiplyBy6(x):
+    x = str(x)
+    res = ""
+    prev = 0
+    add = 0
+    Cache = 0
+
+    for z in x[::-1]:
+        z = int(z)
+        if z%2:
+            add = str(int(Cache)+z+5+int(prev/2))
+        else:
+            add = str(int(Cache)+z+int(prev/2))
+        if len(add)==2:
+            Cache, add = add[0], add[-1]
+        else:
+            Cache = 0
+        res = add + res
+        prev = int(z)
+        
+    res = str(int(Cache)+int(prev/2)) + res
+    return int(res)
+
+x = 8374561
+x*6
+>>> 50247366
+
+MultiplyBy6(x)
+>>> 50247366
+#+end_src
 
 
-Multiplication by 7
+** Multiplication by 7
 
+#+begin_src python
+def MultiplyBy7(x):
+    x = str(x)
+    res = ""
+    prev = 0
+    add = 0
+    Cache = 0
+
+    for z in x[::-1]:
+        z = int(z)
+        if z%2:
+            add = str(int(Cache)+z*2+5+int(prev/2))
+        else:
+            add = str(int(Cache)+z*2+int(prev/2))
+        if len(add)==2:
+            Cache, add = add[0], add[-1]
+        else:
+            Cache = 0
+        res = add + res
+        prev = int(z)
+        
+    res = str(int(Cache)+int(prev/2)) + res
+    return int(res)
+
+x = 839138
+print(x*7)
+>>> 5873966
+
+MultiplyBy7(x)
+>>> 5873966
+#+end_src
 
 Multiplication by 8
 
+#+begin_src python
+def MultiplyBy8(x):
+    x = str(x)
+    res = ""
+    prev = 0
+    length = 0
+    Cache = 0
+
+    for z in x[::-1]:
+        if length == 0:
+            add = str((10 - int(z))*2 + int(prev) + Cache)
+        else:
+            add = str((9 - int(z))*2 + int(prev) + Cache) 
+        res = add[-1] + res
+        if len(add) == 2: Cache = int(add[0]) 
+        else: Cache = 0
+        prev = z
+        length+=1
+    add = str(int(z)-2+Cache)
+    res = add + res
+    return int(res)
+
+x = 52635
+print(x*8)
+>>> 421080
+
+MultiplyBy8(x)
+>>> 421080
+#+end_src
 
 Multiplication by 9
 
+#+begin_src python
+def MultiplyBy9(x):
+    x = str(x)
+    res = ""
+    prev = 0
+    length = 0
+    Cache = 0
 
-Multiplication by 11
+    for z in x[::-1]:
+        if length == 0:
+            add = int(z) - 10
+        else:
+            add = 9 - int(z)+ int(prev) + Cache
+        add = str(abs(add))
+        if len(add) == 2:
+            Cache = int(add[0])
+            add = add[-1]
+        else:
+            Cache = 0
+        res = add + res
+        prev = z
+        length+=1
+        
+    add = str(int(z)-1+Cache)
+    res = add + res
+    return int(res)
 
+x = 6428
+print(x*9)
+>>> 57852
 
-Multiplication by 12
-
-
+MultiplyBy9(x)
+>>> 57852
+#+end_src
 
 
 
