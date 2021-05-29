@@ -105,22 +105,138 @@ Here below we represent the algos f">
         
 
     </header><div class="e-content entry-content" itemprop="articleBody text">
-    <div id="outline-container-org3b7251c" class="outline-2">
-<h2 id="org3b7251c">Trachtenberg Method or how to overcomplicate multiplications</h2>
-<div class="outline-text-2" id="text-org3b7251c">
+    <div id="outline-container-org02d146c" class="outline-2">
+<h2 id="org02d146c">Trachtenberg Method or how to overcomplicate multiplications</h2>
+<div class="outline-text-2" id="text-org02d146c">
 <p>
 The Trachtenberg system is a method for rapid mental calculation developped by Jakow Trachtenberg.
 </p>
 
 <p>
 Here below we represent the algos for multiplication going from 5 to 12.
+So these 'hacks' should be used for accelerating mental calculations and help making sure you know at least the multiplication table for the first 11 numbers
+(Which is the very least you should know according to A. Borovik, whcih recommend to know this, as well as the square of positive integers up to 31<sup>2</sup>, the cubes of positive integer up to 11<sup>3</sup> and the powers of 2 up to 2<sup>10</sup>).
 </p>
 
 <p>
-Multiplication by 5
+But What is certain, is that these method was never intendend to be used with a numerical implementation, which since any computer can do any of these multiplication efficiently would be stupid to implement.. so let's do it.
+</p>
+</div>
+
+
+<div id="outline-container-org3115aba" class="outline-3">
+<h3 id="org3115aba">Multiplication by 11</h3>
+<div class="outline-text-3" id="text-org3115aba">
+<p>
+Probably the most known solution, it basically is putting the addition of the two 'chiffre' of a 'nombre' inbweeten them. (Pardon my french, but the difference between digit and numbers in that language). 
 </p>
 
-<div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">MultiplyBy5</span><span class="p">(</span><span class="n">xyz</span><span class="p">):</span>
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MultiplyBy11</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">Cache</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+	<span class="n">add</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">Cache</span><span class="p">))</span>
+	<span class="n">res</span> <span class="o">=</span> <span class="n">add</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">res</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">add</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Cache</span> <span class="o">=</span> <span class="n">add</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
+	<span class="k">else</span><span class="p">:</span> <span class="n">Cache</span> <span class="o">=</span> <span class="s2">"0"</span>
+	<span class="n">prev</span> <span class="o">=</span> <span class="n">z</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">Cache</span><span class="p">))</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">MultiplyBy11_Bis</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="s2">"0"</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">6573</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">11</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">72303</span>
+
+<span class="n">MultiplyBy11</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">72303</span>
+
+<span class="n">MultiplyBy11_Bis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">72303</span>
+</pre></div>
+</div>
+</div>
+
+
+<div id="outline-container-orgb0659f7" class="outline-3">
+<h3 id="orgb0659f7">Multiplication by 12</h3>
+<div class="outline-text-3" id="text-orgb0659f7">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MultiplyBy12</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="n">Cache</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+	<span class="n">add</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">Cache</span><span class="p">))</span> <span class="c1"># Only difference is here</span>
+	<span class="n">res</span> <span class="o">=</span> <span class="n">add</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">res</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">add</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Cache</span> <span class="o">=</span> <span class="n">add</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> 
+	<span class="k">else</span><span class="p">:</span> <span class="n">Cache</span> <span class="o">=</span> <span class="s2">"0"</span>
+	<span class="n">prev</span> <span class="o">=</span> <span class="n">z</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">Cache</span><span class="p">))</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">z</span> <span class="o">+</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">MultiplyBy12_Bis</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"0"</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">3729</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="mi">12</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">44748</span>
+
+<span class="n">MultiplyBy12</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">44748</span>
+
+<span class="n">MultiplyBy12_Bis</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">44748</span>
+</pre></div>
+</div>
+</div>
+
+
+<div id="outline-container-org1f67538" class="outline-3">
+<h3 id="org1f67538">Multiplication by 10</h3>
+<div class="outline-text-3" id="text-org1f67538">
+<p>
+Yeah, what I am doing is stupid, but not that stupid.
+</p>
+</div>
+</div>
+
+<div id="outline-container-org21e67f9" class="outline-3">
+<h3 id="org21e67f9">Multiplication by 5</h3>
+<div class="outline-text-3" id="text-org21e67f9">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MultiplyBy5</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+	<span class="n">z</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">z</span><span class="o">%</span><span class="mi">2</span><span class="p">:</span>
+	    <span class="n">res</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="mi">5</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="n">res</span>
+	<span class="k">else</span><span class="p">:</span>
+	    <span class="n">res</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="n">res</span>
+	<span class="n">prev</span> <span class="o">=</span> <span class="n">z</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">8265</span>
+<span class="n">x</span><span class="o">*</span><span class="mi">5</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">41325</span>
+
+<span class="n">MultiplyBy5</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">41325</span><span class="k">for</span> <span class="n">MultiplyBy5</span><span class="p">(</span><span class="n">xyz</span><span class="p">):</span>
     <span class="n">xyz</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">xyz</span><span class="p">)</span>
     <span class="n">res</span> <span class="o">=</span> <span class="s2">""</span>
     <span class="k">if</span> <span class="n">xyz</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">%</span><span class="mi">2</span><span class="p">:</span>
@@ -128,39 +244,152 @@ Multiplication by 5
     <span class="k">else</span><span class="p">:</span>
 	<span class="n">res</span><span class="o">+=</span><span class="s2">"5"</span>
 </pre></div>
-
-<p>
-Here was the code snippet
-</p>
-
-<p>
-Multiplication by 6
-</p>
+</div>
+</div>
 
 
-<p>
-Multiplication by 7
-</p>
+<div id="outline-container-org258d522" class="outline-3">
+<h3 id="org258d522">Multiplication by 6</h3>
+<div class="outline-text-3" id="text-org258d522">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MultiplyBy6</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">add</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">Cache</span> <span class="o">=</span> <span class="mi">0</span>
 
+    <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+	<span class="n">z</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">z</span><span class="o">%</span><span class="mi">2</span><span class="p">:</span>
+	    <span class="n">add</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">Cache</span><span class="p">)</span><span class="o">+</span><span class="n">z</span><span class="o">+</span><span class="mi">5</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+	<span class="k">else</span><span class="p">:</span>
+	    <span class="n">add</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">Cache</span><span class="p">)</span><span class="o">+</span><span class="n">z</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">add</span><span class="p">)</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+	    <span class="n">Cache</span><span class="p">,</span> <span class="n">add</span> <span class="o">=</span> <span class="n">add</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">add</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+	<span class="k">else</span><span class="p">:</span>
+	    <span class="n">Cache</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">res</span> <span class="o">=</span> <span class="n">add</span> <span class="o">+</span> <span class="n">res</span>
+	<span class="n">prev</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">Cache</span><span class="p">)</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">8374561</span>
+<span class="n">x</span><span class="o">*</span><span class="mi">6</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">50247366</span>
+
+<span class="n">MultiplyBy6</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">50247366</span>
+</pre></div>
+</div>
+</div>
+
+
+<div id="outline-container-org518eb6a" class="outline-3">
+<h3 id="org518eb6a">Multiplication by 7</h3>
+<div class="outline-text-3" id="text-org518eb6a">
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MultiplyBy7</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">add</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">Cache</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+	<span class="n">z</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+	<span class="k">if</span> <span class="n">z</span><span class="o">%</span><span class="mi">2</span><span class="p">:</span>
+	    <span class="n">add</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">Cache</span><span class="p">)</span><span class="o">+</span><span class="n">z</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="mi">5</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+	<span class="k">else</span><span class="p">:</span>
+	    <span class="n">add</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">Cache</span><span class="p">)</span><span class="o">+</span><span class="n">z</span><span class="o">*</span><span class="mi">2</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">add</span><span class="p">)</span><span class="o">==</span><span class="mi">2</span><span class="p">:</span>
+	    <span class="n">Cache</span><span class="p">,</span> <span class="n">add</span> <span class="o">=</span> <span class="n">add</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">add</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+	<span class="k">else</span><span class="p">:</span>
+	    <span class="n">Cache</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">res</span> <span class="o">=</span> <span class="n">add</span> <span class="o">+</span> <span class="n">res</span>
+	<span class="n">prev</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+
+    <span class="n">res</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">Cache</span><span class="p">)</span><span class="o">+</span><span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="o">/</span><span class="mi">2</span><span class="p">))</span> <span class="o">+</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">839138</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">7</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">5873966</span>
+
+<span class="n">MultiplyBy7</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">5873966</span>
+</pre></div>
 
 <p>
 Multiplication by 8
 </p>
 
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MultiplyBy8</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">Cache</span> <span class="o">=</span> <span class="mi">0</span>
+
+    <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+	<span class="k">if</span> <span class="n">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+	    <span class="n">add</span> <span class="o">=</span> <span class="nb">str</span><span class="p">((</span><span class="mi">10</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="p">)</span> <span class="o">+</span> <span class="n">Cache</span><span class="p">)</span>
+	<span class="k">else</span><span class="p">:</span>
+	    <span class="n">add</span> <span class="o">=</span> <span class="nb">str</span><span class="p">((</span><span class="mi">9</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">))</span><span class="o">*</span><span class="mi">2</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="p">)</span> <span class="o">+</span> <span class="n">Cache</span><span class="p">)</span> 
+	<span class="n">res</span> <span class="o">=</span> <span class="n">add</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">res</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">add</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span> <span class="n">Cache</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">add</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> 
+	<span class="k">else</span><span class="p">:</span> <span class="n">Cache</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">prev</span> <span class="o">=</span> <span class="n">z</span>
+	<span class="n">length</span><span class="o">+=</span><span class="mi">1</span>
+    <span class="n">add</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="o">+</span><span class="n">Cache</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">add</span> <span class="o">+</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="mi">52635</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">8</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">421080</span>
+
+<span class="n">MultiplyBy8</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">421080</span>
+</pre></div>
 
 <p>
 Multiplication by 9
 </p>
 
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">MultiplyBy9</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="s2">""</span>
+    <span class="n">prev</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">length</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">Cache</span> <span class="o">=</span> <span class="mi">0</span>
 
-<p>
-Multiplication by 11
-</p>
+    <span class="k">for</span> <span class="n">z</span> <span class="ow">in</span> <span class="n">x</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+	<span class="k">if</span> <span class="n">length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+	    <span class="n">add</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">-</span> <span class="mi">10</span>
+	<span class="k">else</span><span class="p">:</span>
+	    <span class="n">add</span> <span class="o">=</span> <span class="mi">9</span> <span class="o">-</span> <span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="n">prev</span><span class="p">)</span> <span class="o">+</span> <span class="n">Cache</span>
+	<span class="n">add</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="n">add</span><span class="p">))</span>
+	<span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">add</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">:</span>
+	    <span class="n">Cache</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">add</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+	    <span class="n">add</span> <span class="o">=</span> <span class="n">add</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+	<span class="k">else</span><span class="p">:</span>
+	    <span class="n">Cache</span> <span class="o">=</span> <span class="mi">0</span>
+	<span class="n">res</span> <span class="o">=</span> <span class="n">add</span> <span class="o">+</span> <span class="n">res</span>
+	<span class="n">prev</span> <span class="o">=</span> <span class="n">z</span>
+	<span class="n">length</span><span class="o">+=</span><span class="mi">1</span>
 
+    <span class="n">add</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="o">+</span><span class="n">Cache</span><span class="p">)</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="n">add</span> <span class="o">+</span> <span class="n">res</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
 
-<p>
-Multiplication by 12
-</p>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">6428</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">*</span><span class="mi">9</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">57852</span>
+
+<span class="n">MultiplyBy9</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">57852</span>
+</pre></div>
+</div>
 </div>
 </div>
     </div>
