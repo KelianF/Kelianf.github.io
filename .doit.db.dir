@@ -43,7 +43,7 @@
 'render_taxonomies:output\\categories\\index.html', (33792, 1569)
 'copy_assets', (35840, 56)
 'copy_assets:output\\assets\\js\\popper.min.js', (36352, 428)
-'sitemap:output\\sitemap.xml', (115200, 2992)
+'sitemap:output\\sitemap.xml', (115200, 2989)
 'render_taxonomies:output\\index.html', (98816, 5718)
 'create_bundles', (43008, 56)
 'render_pages', (43520, 56)
