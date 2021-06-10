@@ -11,7 +11,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
 <link rel="canonical" href="https://kelianf.github.io/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/trachtenberg/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/template-orgmode/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -68,7 +68,405 @@
     
         
     <div class="postindex">
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/trachtenberg/" class="u-url">Trachtenberg</a></h1>
+            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/template-orgmode/" class="u-url">Template OrgMode</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Kelian
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/template-orgmode/" rel="bookmark">
+            <time class="published dt-published" datetime="2021-06-10T05:54:50-04:00" itemprop="datePublished" title="2021-06-10 05:54">2021-06-10 05:54</time></a>
+            </p>
+                        <p class="commentline">
+        
+
+
+                </p>
+</div>
+            </header><div class="e-content entry-content">
+                    <div id="outline-container-orgbbe2d09" class="outline-2">
+<h2 id="orgbbe2d09">Basic Code Block</h2>
+<div class="outline-text-2" id="text-orgbbe2d09">
+</div>
+<div id="outline-container-org58d87f1" class="outline-3">
+<h3 id="org58d87f1">Synthax</h3>
+<div class="outline-text-3" id="text-org58d87f1">
+<p>
+Before code blocks, to request the creation of a template, you can do:
+</p>
+
+<p>
+c-c c-e and then #.
+</p>
+
+
+
+
+
+<p>
+A code block is crated by doing c-c c-, and then selecting 's'.
+</p>
+
+<p>
+looks as follow:
+</p>
+
+<p>
+'#+begin\textunderscore{src }Language
+</p>
+
+
+
+<p>
+'#+end\textunderscore{src}
+</p>
+
+
+
+<p>
+With: Language the programming language wanted to be used
+</p>
+
+<p>
+(e.g. emacs-lisp, python, R, julia, etc..).
+</p>
+
+
+
+<p>
+To execute the code inside: c-c c-c, giving a '#+RESULTS: ' block.
+</p>
+</div>
+</div>
+
+
+
+<div id="outline-container-org5d7c266" class="outline-3">
+<h3 id="org5d7c266">Example: Hello World</h3>
+<div class="outline-text-3" id="text-org5d7c266">
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="s2">"Hello, World!"</span>
+
+<span class="k">return</span> <span class="n">x</span>
+</pre></div>
+
+
+
+<pre class="example">
+Hello, World!
+</pre>
+</div>
+</div>
+</div>
+
+
+
+<div id="outline-container-org0a6532b" class="outline-2">
+<h2 id="org0a6532b">Code Block use</h2>
+<div class="outline-text-2" id="text-org0a6532b">
+<p>
+After the language you can add:
+</p>
+
+
+
+<p>
+:exports (code/results/both/none)
+</p>
+
+
+
+<p>
+If want to see from print use ':results output'.
+</p>
+
+
+
+<p>
+If want to see from return use ':results value'.
+</p>
+</div>
+
+<div id="outline-container-orgeca29ce" class="outline-3">
+<h3 id="orgeca29ce">Basic blocks</h3>
+<div class="outline-text-3" id="text-orgeca29ce">
+</div>
+<div id="outline-container-org031bc08" class="outline-4">
+<h4 id="org031bc08">Print statement</h4>
+<div class="outline-text-4" id="text-org031bc08">
+<p>
+'#+begin\textunderscore{src } python :results output :exports both
+</p>
+
+<div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+
+
+
+<pre class="example">
+2
+</pre>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgcbca7c6" class="outline-4">
+<h4 id="orgcbca7c6">Return Statement</h4>
+<div class="outline-text-4" id="text-orgcbca7c6">
+<p>
+'#+begin\textunderscore{src }python :results value
+</p>
+
+<div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+
+<span class="k">return</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+
+
+
+<pre class="example">
+3
+</pre>
+</div>
+</div>
+
+
+
+<div id="outline-container-orgb7001aa" class="outline-4">
+<h4 id="orgb7001aa">Function</h4>
+<div class="outline-text-4" id="text-orgb7001aa">
+<p>
+To enter into a code block into edit mode: c-c '.
+</p>
+
+
+
+
+
+<p>
+'#+name: session\textunderscore{test}
+</p>
+
+
+
+<p>
+'#+begin\textunderscore{src} python :results value :session foo
+</p>
+
+<p>
+:exports both
+</p>
+
+
+
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">BasicFunc</span><span class="p">():</span>
+
+    <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="n">y</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="k">return</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">BasicFunc</span><span class="p">()</span>
+</pre></div>
+
+
+
+<pre class="example">
+2
+</pre>
+</div>
+</div>
+
+
+
+<div id="outline-container-org35939cf" class="outline-4">
+<h4 id="org35939cf">Multiple linked blocks</h4>
+<div class="outline-text-4" id="text-org35939cf">
+<p>
+'#+name: session\textunderscore{test2}
+</p>
+
+
+
+<p>
+'#+begin\textunderscore{src} python :session test2 :exports both
+</p>
+
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">PrintHelloAnd</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+
+    <span class="k">return</span> <span class="s2">"Hello and "</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+
+
+
+<p>
+'#+begin\textunderscore{src} python :session test2 :results output :exports both
+</p>
+
+<div class="highlight"><pre><span></span><span class="n">word</span> <span class="o">=</span> <span class="s2">"World"</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">PrintHelloAnd</span><span class="p">(</span><span class="n">word</span><span class="p">))</span>
+</pre></div>
+
+
+
+<pre class="example">
+Hello and Word
+</pre>
+
+
+
+
+<p>
+'#+begin\textunderscore{src} python :session test2 :results value :exports both
+</p>
+
+<div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">AddMonde</span><span class="p">():</span>
+
+    <span class="n">word2</span> <span class="o">=</span> <span class="s2">"Monde"</span>
+
+    <span class="k">return</span> <span class="n">PrintHelloAnd</span><span class="p">(</span><span class="n">word2</span><span class="p">)</span>
+
+
+
+<span class="n">AddMonde</span><span class="p">()</span>
+</pre></div>
+
+
+
+<pre class="example">
+Hello and Monde
+</pre>
+</div>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-org42bed82" class="outline-3">
+<h3 id="org42bed82">Table Output</h3>
+<div class="outline-text-3" id="text-org42bed82">
+<p>
+'#+begin\textunderscore{src} python  :exports both :return tabulate(z, headers=z.columns, tablefmt='orgtbl')
+</p>
+
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tabulate</span> <span class="kn">import</span> <span class="n">tabulate</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+
+
+
+<span class="n">z</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">((</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">))</span><span class="o">.</span><span class="n">T</span>
+
+<span class="n">z</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"a"</span><span class="p">,</span> <span class="s2">"B"</span><span class="p">]</span>
+</pre></div>
+
+
+
+<pre class="example">
+|    |         a |         B |
+</pre>
+
+
+<pre class="example">
+|----+-----------+-----------|
+</pre>
+
+
+<pre class="example">
+|  0 | 0.61425   | 0.545222  |
+</pre>
+
+
+<pre class="example">
+|  1 | 0.385155  | 0.0896188 |
+</pre>
+
+
+<pre class="example">
+|  2 | 0.77791   | 0.0648544 |
+</pre>
+
+
+<pre class="example">
+|  3 | 0.76581   | 0.252647  |
+</pre>
+
+
+<pre class="example">
+|  4 | 0.0541864 | 0.943602  |
+</pre>
+</div>
+</div>
+
+
+
+
+
+<div id="outline-container-org0266b22" class="outline-3">
+<h3 id="org0266b22">Graph output</h3>
+<div class="outline-text-3" id="text-org0266b22">
+<p>
+To have the matplotlib outplut inline just put this at the
+</p>
+
+<p>
+begining: #+STARTUP: inlineimages
+</p>
+
+
+
+
+
+
+
+<p>
+'#+begin\textunderscore{src} python :results file :exports both
+</p>
+
+<div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s2">"image/img2.png"</span><span class="p">)</span>
+
+<span class="k">return</span> <span class="s2">"image/img2.png"</span>
+</pre></div>
+
+
+
+
+<div class="figure">
+<p><img src="image/img2.png" alt="nil"></p>
+</div>
+</div>
+</div>
+</div>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/trachtenberg/" class="u-url">Trachtenberg</a></h1>
                 <div class="metadata">
                     <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                         Kelian

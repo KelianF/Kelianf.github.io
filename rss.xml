@@ -1,5 +1,386 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS</title><link>https://kelianf.github.io/</link><description>On a quest for understanding.</description><atom:link href="https://kelianf.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Sat, 29 May 2021 10:26:53 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Trachtenberg</title><link>https://kelianf.github.io/posts/trachtenberg/</link><dc:creator>Kelian</dc:creator><description>&lt;div id="outline-container-org02d146c" class="outline-2"&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS</title><link>https://kelianf.github.io/</link><description>On a quest for understanding.</description><atom:link href="https://kelianf.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Thu, 10 Jun 2021 09:58:59 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Template OrgMode</title><link>https://kelianf.github.io/posts/template-orgmode/</link><dc:creator>Kelian</dc:creator><description>&lt;div id="outline-container-orgbbe2d09" class="outline-2"&gt;
+&lt;h2 id="orgbbe2d09"&gt;Basic Code Block&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgbbe2d09"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org58d87f1" class="outline-3"&gt;
+&lt;h3 id="org58d87f1"&gt;Synthax&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org58d87f1"&gt;
+&lt;p&gt;
+Before code blocks, to request the creation of a template, you can do:
+&lt;/p&gt;
+
+&lt;p&gt;
+c-c c-e and then #.
+&lt;/p&gt;
+
+
+
+
+
+&lt;p&gt;
+A code block is crated by doing c-c c-, and then selecting 's'.
+&lt;/p&gt;
+
+&lt;p&gt;
+looks as follow:
+&lt;/p&gt;
+
+&lt;p&gt;
+'#+begin\textunderscore{src }Language
+&lt;/p&gt;
+
+
+
+&lt;p&gt;
+'#+end\textunderscore{src}
+&lt;/p&gt;
+
+
+
+&lt;p&gt;
+With: Language the programming language wanted to be used
+&lt;/p&gt;
+
+&lt;p&gt;
+(e.g. emacs-lisp, python, R, julia, etc..).
+&lt;/p&gt;
+
+
+
+&lt;p&gt;
+To execute the code inside: c-c c-c, giving a '#+RESULTS: ' block.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div id="outline-container-org5d7c266" class="outline-3"&gt;
+&lt;h3 id="org5d7c266"&gt;Example: Hello World&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org5d7c266"&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"Hello, World!"&lt;/span&gt;
+
+&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;x&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;pre class="example"&gt;
+Hello, World!
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div id="outline-container-org0a6532b" class="outline-2"&gt;
+&lt;h2 id="org0a6532b"&gt;Code Block use&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0a6532b"&gt;
+&lt;p&gt;
+After the language you can add:
+&lt;/p&gt;
+
+
+
+&lt;p&gt;
+:exports (code/results/both/none)
+&lt;/p&gt;
+
+
+
+&lt;p&gt;
+If want to see from print use ':results output'.
+&lt;/p&gt;
+
+
+
+&lt;p&gt;
+If want to see from return use ':results value'.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgeca29ce" class="outline-3"&gt;
+&lt;h3 id="orgeca29ce"&gt;Basic blocks&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgeca29ce"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org031bc08" class="outline-4"&gt;
+&lt;h4 id="org031bc08"&gt;Print statement&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org031bc08"&gt;
+&lt;p&gt;
+'#+begin\textunderscore{src } python :results output :exports both
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;pre class="example"&gt;
+2
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div id="outline-container-orgcbca7c6" class="outline-4"&gt;
+&lt;h4 id="orgcbca7c6"&gt;Return Statement&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgcbca7c6"&gt;
+&lt;p&gt;
+'#+begin\textunderscore{src }python :results value
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;
+
+&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;pre class="example"&gt;
+3
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div id="outline-container-orgb7001aa" class="outline-4"&gt;
+&lt;h4 id="orgb7001aa"&gt;Function&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgb7001aa"&gt;
+&lt;p&gt;
+To enter into a code block into edit mode: c-c '.
+&lt;/p&gt;
+
+
+
+
+
+&lt;p&gt;
+'#+name: session\textunderscore{test}
+&lt;/p&gt;
+
+
+
+&lt;p&gt;
+'#+begin\textunderscore{src} python :results value :session foo
+&lt;/p&gt;
+
+&lt;p&gt;
+:exports both
+&lt;/p&gt;
+
+
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;BasicFunc&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+
+    &lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+
+    &lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="o"&gt;+&lt;/span&gt;&lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;BasicFunc&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;pre class="example"&gt;
+2
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+&lt;div id="outline-container-org35939cf" class="outline-4"&gt;
+&lt;h4 id="org35939cf"&gt;Multiple linked blocks&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org35939cf"&gt;
+&lt;p&gt;
+'#+name: session\textunderscore{test2}
+&lt;/p&gt;
+
+
+
+&lt;p&gt;
+'#+begin\textunderscore{src} python :session test2 :exports both
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;PrintHelloAnd&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;):&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;"Hello and "&lt;/span&gt; &lt;span class="o"&gt;+&lt;/span&gt; &lt;span class="nb"&gt;str&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;p&gt;
+'#+begin\textunderscore{src} python :session test2 :results output :exports both
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"World"&lt;/span&gt;
+
+&lt;span class="nb"&gt;print&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;PrintHelloAnd&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;pre class="example"&gt;
+Hello and Word
+&lt;/pre&gt;
+
+
+
+
+&lt;p&gt;
+'#+begin\textunderscore{src} python :session test2 :results value :exports both
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="k"&gt;def&lt;/span&gt; &lt;span class="nf"&gt;AddMonde&lt;/span&gt;&lt;span class="p"&gt;():&lt;/span&gt;
+
+    &lt;span class="n"&gt;word2&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="s2"&gt;"Monde"&lt;/span&gt;
+
+    &lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="n"&gt;PrintHelloAnd&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;word2&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+
+&lt;span class="n"&gt;AddMonde&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;pre class="example"&gt;
+Hello and Monde
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+
+&lt;div id="outline-container-org42bed82" class="outline-3"&gt;
+&lt;h3 id="org42bed82"&gt;Table Output&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org42bed82"&gt;
+&lt;p&gt;
+'#+begin\textunderscore{src} python  :exports both :return tabulate(z, headers=z.columns, tablefmt='orgtbl')
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;from&lt;/span&gt; &lt;span class="nn"&gt;tabulate&lt;/span&gt; &lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="n"&gt;tabulate&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;pandas&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;pd&lt;/span&gt;
+
+
+
+&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;y&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+
+
+&lt;span class="n"&gt;z&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;pd&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;DataFrame&lt;/span&gt;&lt;span class="p"&gt;((&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;y&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;T&lt;/span&gt;
+
+&lt;span class="n"&gt;z&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;columns&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="p"&gt;[&lt;/span&gt;&lt;span class="s2"&gt;"a"&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="s2"&gt;"B"&lt;/span&gt;&lt;span class="p"&gt;]&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+
+&lt;pre class="example"&gt;
+|    |         a |         B |
+&lt;/pre&gt;
+
+
+&lt;pre class="example"&gt;
+|----+-----------+-----------|
+&lt;/pre&gt;
+
+
+&lt;pre class="example"&gt;
+|  0 | 0.61425   | 0.545222  |
+&lt;/pre&gt;
+
+
+&lt;pre class="example"&gt;
+|  1 | 0.385155  | 0.0896188 |
+&lt;/pre&gt;
+
+
+&lt;pre class="example"&gt;
+|  2 | 0.77791   | 0.0648544 |
+&lt;/pre&gt;
+
+
+&lt;pre class="example"&gt;
+|  3 | 0.76581   | 0.252647  |
+&lt;/pre&gt;
+
+
+&lt;pre class="example"&gt;
+|  4 | 0.0541864 | 0.943602  |
+&lt;/pre&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+
+&lt;div id="outline-container-org0266b22" class="outline-3"&gt;
+&lt;h3 id="org0266b22"&gt;Graph output&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org0266b22"&gt;
+&lt;p&gt;
+To have the matplotlib outplut inline just put this at the
+&lt;/p&gt;
+
+&lt;p&gt;
+begining: #+STARTUP: inlineimages
+&lt;/p&gt;
+
+
+
+
+
+
+
+&lt;p&gt;
+'#+begin\textunderscore{src} python :results file :exports both
+&lt;/p&gt;
+
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;numpy&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;np&lt;/span&gt;
+
+&lt;span class="kn"&gt;import&lt;/span&gt; &lt;span class="nn"&gt;matplotlib.pyplot&lt;/span&gt; &lt;span class="k"&gt;as&lt;/span&gt; &lt;span class="nn"&gt;plt&lt;/span&gt;
+
+
+
+&lt;span class="n"&gt;x&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;np&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;random&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;rand&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;fig&lt;/span&gt; &lt;span class="o"&gt;=&lt;/span&gt; &lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;figure&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;figsize&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="p"&gt;))&lt;/span&gt;
+
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;plot&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;x&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="n"&gt;fig&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;tight_layout&lt;/span&gt;&lt;span class="p"&gt;()&lt;/span&gt;
+
+&lt;span class="n"&gt;plt&lt;/span&gt;&lt;span class="o"&gt;.&lt;/span&gt;&lt;span class="n"&gt;savefig&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="s2"&gt;"image/img2.png"&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;
+
+&lt;span class="k"&gt;return&lt;/span&gt; &lt;span class="s2"&gt;"image/img2.png"&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+
+
+&lt;div class="figure"&gt;
+&lt;p&gt;&lt;img src="https://kelianf.github.io/image/img2.png" alt="nil"&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>CompSci</category><category>Emacs</category><guid>https://kelianf.github.io/posts/template-orgmode/</guid><pubDate>Thu, 10 Jun 2021 09:54:50 GMT</pubDate></item><item><title>Trachtenberg</title><link>https://kelianf.github.io/posts/trachtenberg/</link><dc:creator>Kelian</dc:creator><description>&lt;div id="outline-container-org02d146c" class="outline-2"&gt;
 &lt;h2 id="org02d146c"&gt;Trachtenberg Method or how to overcomplicate multiplications&lt;/h2&gt;
 &lt;div class="outline-text-2" id="text-org02d146c"&gt;
 &lt;p&gt;
