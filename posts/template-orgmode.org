@@ -1,0 +1,334 @@
+#+BEGIN_COMMENT
+.. title: Template OrgMode
+.. slug: template-orgmode
+.. date: 2021-06-10 05:54:50 UTC-04:00
+.. tags: CompSci, Emacs
+.. category: CompSci, Emacs
+.. link: 
+.. description: Simple Template to use OrgMode with code blocks
+.. type: text
+
+#+END_COMMENT
+
+
+* Basic Code Block
+
+ 
+
+** Synthax
+
+Before code blocks, to request the creation of a template, you can do:
+
+c-c c-e and then #.
+
+ 
+
+ 
+
+A code block is crated by doing c-c c-, and then selecting 's'.
+
+looks as follow:
+
+'#+begin\textunderscore{src }Language
+
+ 
+
+'#+end\textunderscore{src}
+
+ 
+
+With: Language the programming language wanted to be used
+
+(e.g. emacs-lisp, python, R, julia, etc..).
+
+ 
+
+To execute the code inside: c-c c-c, giving a '#+RESULTS: ' block.
+
+ 
+
+** Example: Hello World
+
+ 
+
+#+begin_src python :exports both
+
+x = "Hello, World!"
+
+return x
+
+#+end_src
+
+ 
+
+#+RESULTS:
+
+: Hello, World!
+
+ 
+
+* Code Block use
+
+After the language you can add:
+
+ 
+
+:exports (code/results/both/none)
+
+ 
+
+If want to see from print use ':results output'.
+
+ 
+
+If want to see from return use ':results value'.
+
+** Basic blocks
+
+*** Print statement
+
+'#+begin\textunderscore{src } python :results output :exports both
+
+#+begin_src python :results output :exports both
+
+print(1+1)
+
+#+end_src
+
+ 
+
+#+RESULTS:
+
+: 2
+
+ 
+
+*** Return Statement
+
+'#+begin\textunderscore{src }python :results value
+
+#+begin_src python :results value :exports both
+
+x = 1
+
+y = 2
+
+return (x + y)
+
+#+end_src
+
+ 
+
+#+RESULTS:
+
+: 3
+
+ 
+
+*** Function
+
+To enter into a code block into edit mode: c-c '.
+
+ 
+
+ 
+
+'#+name: session\textunderscore{test}
+
+ 
+
+'#+begin\textunderscore{src} python :results value :session foo
+
+:exports both
+
+ 
+
+#+name: session_test
+
+#+begin_src python :results value :session foo :exports both
+
+def BasicFunc():
+
+    x = 1
+
+    y = 1
+
+    return (1+1)
+
+BasicFunc()
+
+#+end_src
+
+ 
+
+#+RESULTS: session_test
+
+: 2
+
+ 
+
+*** Multiple linked blocks
+
+ 
+
+'#+name: session\textunderscore{test2}
+
+ 
+
+'#+begin\textunderscore{src} python :session test2 :exports both
+
+#+name: session_test2
+
+#+begin_src python :session test2 :exports both
+
+def PrintHelloAnd(x):
+
+    return "Hello and " + str(x)
+
+#+end_src
+
+ 
+
+#+RESULTS: session_test2
+
+ 
+
+'#+begin\textunderscore{src} python :session test2 :results output :exports both
+
+#+begin_src python :session test2 :results output :exports both
+
+word = "World"
+
+print(PrintHelloAnd(word))
+
+#+end_src
+
+ 
+
+#+RESULTS:
+
+: Hello and Word
+
+ 
+
+'#+begin\textunderscore{src} python :session test2 :results value :exports both
+
+#+begin_src python :session test2 :results value :exports both
+
+def AddMonde():
+
+    word2 = "Monde"
+
+    return PrintHelloAnd(word2)
+
+ 
+
+AddMonde()
+
+#+end_src
+
+ 
+
+#+RESULTS:
+
+: Hello and Monde
+
+ 
+
+ 
+
+** Table Output
+
+ 
+
+'#+begin\textunderscore{src} python  :exports both :return tabulate(z, headers=z.columns, tablefmt='orgtbl')
+
+#+begin_src python  :exports both :return tabulate(z, headers=z.columns, tablefmt='orgtbl')
+
+from tabulate import tabulate
+
+import numpy as np
+
+import pandas as pd
+
+ 
+
+x = np.random.rand(5)
+
+y = np.random.rand(5)
+
+ 
+
+z = pd.DataFrame((x, y)).T
+
+z.columns = ["a", "B"]
+
+#+end_src
+
+ 
+
+#+RESULTS:
+
+: |    |         a |         B |
+
+: |----+-----------+-----------|
+
+: |  0 | 0.61425   | 0.545222  |
+
+: |  1 | 0.385155  | 0.0896188 |
+
+: |  2 | 0.77791   | 0.0648544 |
+
+: |  3 | 0.76581   | 0.252647  |
+
+: |  4 | 0.0541864 | 0.943602  |
+
+ 
+
+ 
+
+** Graph output
+
+ 
+
+To have the matplotlib outplut inline just put this at the
+
+begining: #+STARTUP: inlineimages
+
+ 
+
+ 
+
+ 
+
+'#+begin\textunderscore{src} python :results file :exports both
+
+#+STARTUP: inlineimages
+
+#+begin_src python :results file :exports both
+
+import numpy as np
+
+import matplotlib.pyplot as plt
+
+ 
+
+x = np.random.rand(10)
+
+fig = plt.figure(figsize=(4,2))
+
+plt.plot(x)
+
+fig.tight_layout()
+
+plt.savefig("image/img2.png")
+
+return "image/img2.png"
+
+#+end_src
+
+ 
+
+#+RESULTS:
+
+[[file:image/img2.png]]
