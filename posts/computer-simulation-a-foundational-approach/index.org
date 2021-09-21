@@ -12,15 +12,8 @@
 #+END_COMMENT
 
 
-The book is separated in Five parts: I. The Fundamentals, II. Managing Complexity, III. Problem Solving, IV. Scources of Randomness, and V. Case Studies.
+The book is separated in Five parts: I. The Fundamentals, II. Managing Complexity, III. Problem Solving, IV. Scources of Randomness.
 
-.. image:: /images/CompSim_FoundationalApproach/PremieredeCouverture.jpg
-
-
-
-or:
-
-<img src="/images/CompSim_FoundationalApproach/PremieredeCouverture.jpg">
 
 
 * I. The Fundamentals
