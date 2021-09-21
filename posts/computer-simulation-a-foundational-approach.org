@@ -1,0 +1,555 @@
+
+#+BEGIN_COMMENT
+.. title: Computer Simulation: A Foundational Approach
+.. slug: computer-simulation-a-foundational-approach
+.. date: 2021-08-27 01:53:56 UTC-04:00
+.. tags: CompSci
+.. category: CompSci
+.. link: 
+.. description: 
+.. type: text
+
+#+END_COMMENT
+
+
+The book is separated in Five parts: I. The Fundamentals, II. Managing Complexity, III. Problem Solving, IV. Scources of Randomness, and V. Case Studies.
+
+.. image:: /images/CompSim_FoundationalApproach/PremieredeCouverture.jpg
+
+
+
+or:
+
+<img src="/images/CompSim_FoundationalApproach/PremieredeCouverture.jpg">
+
+
+* I. The Fundamentals
+** Introduction
+
+So, what is a simulation? It is the process of representing a system by a model and then executing this model to generate raw data. The model is a conceptual representation of the system, an approximation. The raw data is also referred to as simulation data. 
+
+A simulation process can be divided in 6 steps:
+1. The problem description. When starting, a question should be gven to then find an answer.
+2. System description. It could be for example the different states and agents (to use a RL language)
+3. Model construction. This is an iterative process, in which the goal is to formulate a formal description of the system.
+4. Computer Program. Code it up.
+5. Statistical Analysis. Select relevant metrics and monitor them; for example Sharpe, VaR and Calmar Ratio in Finance.
+6. Performance Summary. Last part, the answer to the question with given confidence interval and conclusion as well as possible recommendations.
+
+** Building Conceptual Model
+
+A conceptual model is a representation of a system using specialized concepts and terms (e.g. a mathematical model for of a system is constructed using specialized concepts such as constants, variables, functions...). 
+
+A conceptual model can be constructed using five elements: 
+- Entity, it represent the object in the system that must be explicitely captured in the model in order to be able to describe the overall operation of the system.
+- Attributes, related to the entity (e.g. arrival time, weight, ..)
+- State Variable, The state of the system under study is represented by a set of state variables, which each track a property of a static entity over time.
+- Event, It represents the occurence of something interesting inside the system. It is a stimulus that cause the system to change its state.
+- Activities, are the action performed by the system for a finite duration of time.
+
+
+** Simulation Probabilities
+
+A probability is a number between 0 and 1, inclusive. It is assigned to each possible outcome in the sample space of a random experiement. Probabilities must be assigned to outcomes in such a way that they add up to one. Then the probability of an event is is simply the sum of the proobabilities of the individual outcomes making up the event.
+
+The Axioms of Probability:
+1. \exist outcome w_i \in \Omega, P(w_i) \in [0, 1],
+2. \forall Outcomes w_i \in \Omega, \sum_i P(w_i) = 1,
+3. For each event E_j \subset \Omega, P(E_j)=\sum_i P(w_i), where w_i \in E_j,
+4. \forall Possible disjoint events E_j \subset \Omega:
+$P({\cup_j E_j}) = \sum_j P(E_j) $
+
+
+The Law of Large number 
+
+Let x_1, x_2, ..., x_n be a set of sample (realization/outcomes of a random experiement), then with probability 1:
+
+<center>$lim_{x\to\infty}\frac{x_1 + x_2 + ... + x_n}{n}$</center>
+
+converges to the population mean. That is, the running mean will eventually converge to the population mean.
+
+
+** Simulating Random Variables and Stochastic Processes
+
+A dynamic system can be viewed as either a sequence of random variables or a stochastic process.
+In the former, the system evolves in discrete steps and its state changes at discrete instants of time.
+In the latter, however, the system evolves continuously over time and the times at which events occur cannot be predicted.
+Random variables are mathematical abstractions which are defined on the sample space of a random experiement. In other term, a random variable is a function which associate a probability whith each possible outcome of a random experiement.
+
+
+
+Probability Mass functions refers to the probability function for a discrete random variable. 
+The PMF is defined as follow:
+p_X(x) = P[X=x]I
+t follows the two following properties:
+1. p_X(x) \ge 0, and
+2. \sum_x p_X(x) = 1
+
+
+Cumulative Distribution Function of a dicrete random variable X, denoted F_X(x), is defined as follow:
+F_X(x)=P(X \le x)
+     =\sum_(i\le x)P_x(i)
+
+Basically, the CDF gives the probability that the value of the random variable X is less than or equal to x. Thus, it is a monotonically non-decreasing function of X.
+
+
+Probability Density Function is the equivalent of PMF but for continous function. The PDF is a non-negative, continous function denoted by f_X(x).
+Here is the relationship between PDF and CDF:
+$ f_X(x) = \frac{d}{dx}F_X(x) $
+$ F_X(x) = \int_-\infin^\infin f_X(x)dx
+
+*** Some Useful Random Variables
+**** Bernoulli 
+Also called an Indicator Function. 
+
+        | p,      if x = 1,
+p_X(x) = | 
+        | 1 - p,  if x = 0
+
+With the mean and variance as follow:
+\mu = p
+\sigma^2 = p(1-p)
+
+**** Binomial
+The binomial random variable is an extension of the Bernoulli random variable, where the number of trials n is another parameter of the new random experiement. Basically, the Bernoulli experiement (or trial) is repeated n times.
+
+p_X(x) = (^n_x)p^x(1-p)^(n-x)
+
+With respective mean and variance:
+\mu = np
+\sigma^2 = np(1-p)
+
+**** Geometric
+The random experiment of repeating a Bernoulli trial until the first success is observed is modeled by a geometric random variable. This random variable can also be defined as the number of failure until the first success occurs.
+The PMF for a geometric random variable is the following:
+p_X(x) = p(1-p)^x
+where p is the probability of sucess in a single Bernoulli trial and x \in {0, 1, 2, 3, ...}.
+With:
+$ \mu = \frac{1-p}{p} $
+$ \sigma^2 = \frac{1-p}{p^2}
+
+**** Poisson
+A Poisson random variable X is a discrete random variable which has the following probability mass function:
+$ P(X=x) = \frac{\lambda^x. e^-\lambda}{x!} $
+Where P(X=x) is the probability of x events occurring in an interval of preset length and \lambda is the expected number of events occuring in the same interval.
+
+**** Uniform
+A uniform random variable X is a continuous random variable that has the following cumulative distribution function:
+$ F(x) = \frac{x-a}{b-a} $
+
+The Probability density function is:
+
+        |1/(b-a) , for  x \in [a, b]
+f_X(x) = |
+        | 0, otherwise
+
+The mean and variance are:
+$ \mu = \frac{1}{2}(a + b) $
+$ \sigma^2 = \frac{1}{12}(b - a)^2 $
+
+**** Exponential
+An exponential random variable is a continuous random variable which has the following cumulative distribution function:
+$ F_X(x) = 1 - e^-\mu\lambda $
+whilst the PDF is given by:
+$ f_X(x) = \mu.e^(-\mu x)
+
+
+**** Erlan
+The Erlang random variable is continuous. It can be expressed as a sum of exponential random variables. This random variable has two parameters:
+- \theta: Scale or rate, and
+- \kappa: Shape
+
+The PDF:
+$ f(x) = \frac{x^(k-1)\theta^ke^(-\theta.x)}{(k-1)!}  ; x\ge0 $
+
+The CDF:
+$ F(x) = 1 - e^(-\theta.x) \sum_(j=0)^(k-1) \frac{(\theta.x)^j}{j!} $
+
+**** Normal
+The normal (or Gaussian) random variable is a continous random variable that has the following probability density function:
+$ f(x) = \frac{1}{\sigma.(2\pi)^(1/2)}.e^(\frac{-(x-\mu)^2}{2\sigma^2}) $
+
+**** Triangular
+The triangular random variable has three parameters: a, b and c. The last parameter is referred to as the mode.
+
+The CDF:
+F_X(x) = 
+0, if x \le a,
+$\frac{(x-a)^2}{(b-a)(c-a)} $ , if a < x \le c,
+$ 1 - \frac{(b-x)^2}{(b-a)(b-c)}$ , if c < x < b
+1 , if x \ge b
+
+The PDF :
+f_X(x) = 
+0 if x < a
+$ \frac{2(x-a)}{(b-a)(c-a)} $ , if a \le x < c
+$ \frac{2}{b-a} $ if x = c
+$ \frac{2(b-x)}{(b-a)(b-c)} $ , if c < x \le b
+0 if x > b
+
+The mean and variance are:
+$ \mu = \frac{a + b + c}{3} $
+$ \sigma = \frac{a^2 + b^2 + c^2 - ab - ac - bc}{18}
+
+
+*** Stochastic Processes and dynamic systems
+
+A random variable cannot be used to describe the behaviour of a dynamic system since it does not involve time. Enter the world of stochastic processes. At every instant in time, the state of the process is random. Since time is fixed, we can thinkk of the state of the process as a random variable at that specific instant.
+
+Ergodic system: IF a dynamic system is run for a long perios of time, then each possible system state would be visited. Then, the mean over the state space (i.e. ensemble mean) can be approximated by the mean of a sample path through the state space (i.e. temporal space). Such dynamic systems are referred to as ergodic system, wherein the temporal mean converges to the ensemble mean.
+
+
+*** Simulating Queueing processes
+**** Discrete-time Markov Chains
+A discrete-time Markov chain stays in any state for an amount of time which is geometrically distributed. A Markov Chain is said to be fully characterized if its probability transition matrix is known. 
+An entry P_ij in this matrix represents the probability that the process will make a transition from state i to state j, where i is the present state and j is the next state. 
+Consider a Discrete-Time MArkov Chain with two states: Good (G) and Bad (B). Let the transition Matrix of this DMTC be the following:
+
+P(i, j) = \bordermatrix{ & G & B \cr
+G & .5 & .5 \cr
+B & .7 & .3 \qquad
+
+Noticing that every row and colun is labeled. This matrixx is an example of the classical Gilbert-Elliot two-state wireless channel model.
+
+Given that the present state is X_n = G, the next state X_(n+1) has the following PMF:
+P(X_(n+1) = G  X_n = G) = .5; P(X_(n+1)=B | X_n = G) = .5
+and assuming that X_n = B then the next state X_(n+1) has the following PMF:
+P(X_(n+1) = G | X_n = B) = .7; P(X_(n+1) = B | X_n = G) = .3
+
+Since we know the PMF for the next state given any present state, we can now simulate the DTMC.
+
+
+**** Continuous-time Markov Chain
+When a continuous-time Markov chain enters a state, it remains in the state for an amount of time exponentially distributed.
+
+
+
+
+A Poisson process is an example of a Continous-Time Markov Chain. The time between two consecutive events is called the Inter-Arrival Time (IAT). The random variable IAT has an exponential distribution. Only one kind of event triggers a transition inside a Poisson process, this event is the arrival event. 
+
+The Poisson Process is a special case of another type of random processes called Birth-Date Processes. In a BD Process, two events occur: Birth and Death. The Poisson process is a pure Birth process, since the Birth (i.e. arrival) event occurs only. The state of a BD process changes at random points of time. The state variable is incremented by only one when a birth event occurs. it is decremented by one, on the other hand, when a Death occurs. The time until the next birth is exponenetially distributed with rate \lambda. Similarly, the time until the next death is exponentially distributed with a rate \mu.
+
+** Simulating the Single-Server Queueing System
+
+*** Simulation Model
+
+A single server queuing system is composed of four components: Source, Buffer, Server and Sink.
+The Source generates packets which go into a FIFO buffer, the server fethes the packets from the buffer and then deliers them to the sink after they are processed.
+Since the individual inter-arrival times and service times are unpredictable, they shoul be modelled as random variables. Thus we need to specify the probability distribution of these random variables. The choice of a specific probability distribution has to be supported by an evidence that it is appropriate. The exponential probability distribution is a reasonable model of the inter-arrival and service time.
+
+What cause Delay?
+\to When multiple packets contend for one server, some packets will be queued and system performance suffers. If the service time is always less than or equal to the inter-arrival time, no packet is queued. In reality, however, the service time and inter-arrival times are not constant. Also, packets may require different service times. This variability in service times and inter arrival times causes the delay through the single-server queueing system.
+
+*** Performance Laws
+Throughput, it measures how many packets the system can process in one time unitl. It is defined as the ratio of the number of departure divided by the total simulation time. Mathematically, this law can be written as follow:
+$ \tau = \frac{D}{T} $
+
+Utization, ro server utilization, is the proportion of simulation time during which the server is busy. It is the product of its throughput and the average service time per customer. This can be mathematically be expressed as follows:
+U = \tau . T_s
+Where T_s is the average service time per customer and it is defined as follows:
+$ T_s = \frac{B}{D} $
+
+Where B is the total server busy time which can be computed as follows:
+B = \sum_(i=1)^D T_i
+Where T_i is the service time for customer i.
+
+Response Time, it is the total time a customer spends in the system. This includes waiting time and service time. it is defined as:
+$ W = \frac{\sum_(i=1)^D W_i}{D} $
+As a consequence the average number of packets in the system can be computed as follows:
+L = \tau . W
+
+Little's Laws
+L = \lambda . W
+This law asserts that the time average number of packets in the system is the product of the arrival rate and the response time. This law is due to Little Who proved it in 1961. With \lambda is a parameter of the arrival Poisson process.
+
+*** E[N(t)]
+The state variable N(t) represents the number of packets in the system at time t. 
+In the previous section we saw that Little's Law can be used to compute the average number of customers in the system (i.e. E[N(t)]). This quantity can be directly computed by using one sample path of N(t) as follow.
+
+$ E[N(t)] = \frac{1}{T} . \int_0^T N(t) $
+Where T is the total simulation time.
+
+*** P[N] 
+P[N = k] is the probability that there are exactly k packets in the system. In order to estimate this probability, we sum up all time intervals during which there are exactly k packets in the system. Then, the sum is divided by the total simulation time. 
+
+*** Transcient and steady phase
+A simulation goes through two phases: transcient and steady. 
+In the transcient phase, the values of the output variable vary dramatically. They are significantly different from the theoretical values computed using standard queueing theory formulas. Output variables fluctuate during the transcient phase due to the effect of the initial state of the simulation model.
+
+
+
+
+
+
+** Statistical Analysis of Simulated Data
+*** Population and Samples
+Sample Mean:
+$ \bar{x} = \frac{1}{n} \sum_(i=1)^n X_i $
+
+Sample Variance:
+$ S^2 = \frac{1}{1 - n} \sum_(i=1)^n(X_i - \bar{x})^2 $
+
+Sample standard deviation:
+$ S = \sqrt{S^2} $
+
+The notation for sample and population statistic is as follow:
+Mean: $ \bar{X} $ (Sample), \mu (Population)
+Variance: S^2 (Sample), \sigma^2 (Population)
+Standard Deviation: S (Sample), \sigma (Poupulation)
+
+ *** Central Limit Theorem
+Regardless of the probability distribution of the population mean, the probability distribution of the sample mean is always normal. The mean of this normal distribution is the theoretical mean and the standard deviation is the standard error.
+
+*** Confidence interval
+A ((1 - \alpha) . 100)% confidence interval for a population mean \mu is given by:
+
+$ \bar{x} \pm t . \frac{x}{sqrt{n}} $
+
+with:
+t is a random variable that has a student-t distribution with (n - 1) degrees of freedom.
+$\bar{x}$ is the sample mean
+s is the sample standard deviation
+n is the sample size
+1- \alpha is the confidence level
+
+
+* II. Managing Complexity
+** Event Graph
+George Box: "All models are wrong, but some are useful."
+
+Event graphs are a formal modeling tool which can be used for building discrete-event simulation models. It shows the scheduling relationships between events which occur inside the sytem. An event graph is constructed using vertices and directed edges with attributes and conditions. 
+
+Translating event graphs into code is the main part of this category. The propozed high-level concepts will help in mechanizing the translation process and enhancing the maintainability of the resulting code.
+These high level processes are the following:
+1. Event type
+2. Event generator
+3. Event handler
+4. Initial event
+5. Simulation loop
+
+An event type is the base concept and it includes two subconcepts: event generator and event handler. The event generator is an abstraction of a block of code which returns a realization of an event type.
+On the other hand an event handler is an abstraction of a block of codewhich updates the state of the simulation model in response to an event. Two tasks are performed inside the handler: 1. Updating state variables and 2. Scheduling next events. After an event is fully executed, coontrol is returned to the main simulation loop.
+
+** Building Simulation Programs
+Simulation programs are either time-driven or event-driven. In both cases the state of the simulation model is updated at discrete points in time.
+
+*** Time-Driven Simulation
+This simulation approach is also reffered to as discrete-time simulation. The reason for this name is because the simulation evolves in discrete steps, slots, of size \Delta.t.
+
+The single-server queueing system can be modeled in two ways: discrete-time and continuous-time. In discrrete-time queues, time evolves in discrete steps of the same size. On the other hand, in continous time queues, events can occur at any point on the time line.
+Continous time uses Poisson Distribution for Arrival and Departure Processes and  Exponential for Inter-Arrival and service times; whilst Discrete-time uses Bernoulli for Arrival and Derparture and Geometric for Inter-arrival and Service Times.
+
+*** Event-Driven Simulation
+This approach to simulation is also called discrete-event suimulation. In this type of simulation, time evolves in discrete steps of random sizes. Hence, events happen at random point on the time line. Also, the time between two consecutive events is random.
+An event driven simulation program consists of two components: simulator and model. Events are generated by the model, they are applied back to the model by the simulator. The simulator is responsible for maintaining the temporal order of events using the event list. It is also responsible for keeping the current simulated time up to date. 
+The simulator contains a Random Number Generator, which generate random numbers which are then used to drive the Random Variate Generator. 
+It follows:
+Seed \to Random Number Generator \to Random Variate Generator \to Random Event Generator \to Event
+
+A Flowchart of the event-driven simulation can be separated in 4 components:
+1. Initialization:
+- Simulation Parameters
+- State Variables
+- Output variable- Event list
+- clock = 0
+
+2. Simulation loop
+- EV = EventList.nextEvent()
+- clock = ev.Time
+- ev.EventHandler( clock )
+
+3. Event Handler for event type 1:
+- Update state and output variables
+- Generate and schedule new events
+
+4. Output:
+- Compute performance estimates using output variables
+
+Several programming issues arise when writing event-driven simulation programs. Below are 3 of the most critical:
+- Event Collision: An event is represented by a tuple inside each event generator. When inserted into the event list, the field in the tuple is used as a key for sorting the event. When two events have the same key, an event collision is said to have happened.
+- Identifiers for Packets: When recording data in output variables, the order of packets must be maintained. That is, the i^th entry in any output variable must correspond to the i^th simulated packet. If this order is not maintained, the final statistical results will be wrong.
+- Stopping condition for the simulated loop: There are several options to terminate a simulation loop. 1. Event List becomes empty, 2. Number of simulated packet reaches a preset value, and 3. Maximum allowed simulation time is reached.
+
+
+
+
+* III. Problem-Solving
+** The Monte Carlo Method
+The Monte Carlo (MC) method was born during the second world war. It was used in simulation of atommic collisions which then resulted in the first atomic bomb.
+
+*** Estimating the value of \pi
+The MC Method can be used to estimate the value of a pareter or constant. For example it can be used to estimate the value of \pi, which is the ratio of the cirumference of a circle to its diameter; \pi is approximately equal to 3.14159.
+Consider a full circle with radius r and a centered at the origin. This circle is also enclosed inside a square with an edge length of 2r. A point (x, y) falls inside the circle if the following inequality is satisfied:
+x^2 + y^2 \le r^2
+Both x and y takes values from the interval [-1, 1]. r has fixed value of 1.
+Having a Circle (C) in a Square (S), the probability that a point (x, y) lies inside C is given by:
+$ P[(x, y) \in C] = \frac{measure of C}{measure of S} $
+$ = \frac{area of C}{area of S} $
+$ = \frac{\pi.r^2}{4r^2} $
+$ =\frac{\pi}{4} $
+
+Hence the following equation for \pi can be deduced:
+\pi = 4.P
+Now we have the expression for \pi but need to find P, the probability of having a point inside C vs S.
+
+*** Numerical Integration
+Let a function f(x)defined over the interval [a, b]. The function f(x) is also enclosed inside a rectangle with width b-a and height c. The curve of f(x) divides the rectangle in two regions I, below f(x), and J above. The area under the curve, I is defined as:
+$ A_I = \int_a^b f(x)dx $
+The probability that a randomly generated point falls inside region I can be computed as follows:
+$ P = \frac{A_I}{A_J} $
+where the area of region J is equal to A_J = c . (b - a).
+Hence the integral can be estimated using the following estimator:
+A_I = P.[(b-a).c]
+P=E[Z]
+$ \asymp \frac{1}{N}\sum^N Z_i $
+
+*** Estimating Probabilities: Buffon's needle problem
+In this problem, a needle of length l is dropped onto a floor with equally spaced horizontal lines, the distance between every consecutive lines is d. The length of the needle is constrain such that l \le d. The goal is to estimate the probability that the needle touches or intersect a line.
+The simulation makes use of 2 random variables which uniquely identify the location of the needle on the floor. The two random variables are the following:
+- \alpha: distance from the midpoint of the needle to the closest horizontal line (\alpha \in [0, d/2])
+- \Theta: Angle the needle makes with the  closest line (\Theta \in [0, \pi])
+Clearly the needle will intersect a line if a \le b. 
+The exact ecpression for the probability is the following:
+$ P = \frac{2l}{\pi.d} $
+
+
+*** Reliability
+Consider blocks in which the input is connected to the output if the switch is closed. The probability of this event (closed switch) correspond to the portion of time the block is working.
+The state of the system is a set of three random variable (b_1, b_2, b_3) where each random variable corresponds to the state of an individual block in the system.
+
+*** Variance reduction technique
+Advanced methods of Monte Carlo can help achieving higher level of accuracy. It can also be ised to estimate probabilities of rare events by changing the probability of distribution of the event of interest.
+
+**** Control variates
+Consider a random variable X whose expected value E[X] is to be estimated. Assume there is another random variable Y whose expected value is E[Y] is known. Then, the following is an estimator of E[X]:
+$ E[X] = \frac{1}{n}\sum^n X_i-c(\frac{1}{n}\sum^n Y_i-E[Y]) $
+where c is a constant whch can be estimated using the samples (X, Y) as follows:
+$ c = \frac{\sum^n (X_i - \overline{X})(Y_i - \bar{Y})}{\sum^n (Y_i - \overline{Y})} $
+
+It has to be noted that n \to \infin ; $\frac{1}{n}\sum^n Y_i$ \to E[Y]
+Hence, the second term evaluates to zero. However since the number of samples is finite, the samples of Y are going to reduce the variance in the estimator of E[X]. The result is an estimator that is better than using only Monte Carlo.
+
+**** Stratified Sampling
+In this sampling technique the goal is to stratify samples into groups and then a sample is randomly generated from each group. This way, samples are spread appropriately across the state space.
+Hence in order to estimate the expected value of a function f(x), the sample space of the random variable X is partitioned into K subsets.
+
+
+**** Antithetic Sampling
+A random variate v has an antithetic value (or variate) that is represented by v'. if v is a random variate uniformly distributed on [a, b], then its antithetic variate is given by:
+v' = a + b - v
+The essence of the antithetic sampling technique is to replace each sample s by another one which can be calculated as follow:
+$ s* = \frac{v + v'}{2} $
+
+
+**** Dagger Sampling
+In dagger sampling, multiple samples can be generated using a single random number. 
+Dagger sampling works as follow: The interval [0, 1] is divided into S subinterval. The length of each subinterval is p. if the random value falls on the second interval, the overall sample would be [0, 1, 0] or [T, H, T] in the case of a coin flip.
+
+**** Importance Sampling
+in Importance sampling, samples are generated using a new probability distribution q that is more appropriate than the original probability distribution p.
+However, since the new probability distribution q is different from the correct distribution p, a correction step is necessary.
+Imagine a distribution in which region 2  will be generated more frequently because of the large porbabilities over this region. However, the values of the function in region 1 are more important. How is it possible to sample more from that regions? Thi is the reason this method is reffered to as importance sampling. Since Values sampled from region 1 have more impact, they should be sampled more frequently. So the correction step is very simple, every sample generated using q(x) is multiplied by a weight w(x)= p(x)/q(x) to account for the importance weight.
+
+
+
+
+* IV. Source of Randomness
+** Random Variate Generation
+Here we look at generating random variates from probability distribution.
+
+*** The Inversion Method
+Rembembering that a randon variable is a function that takes as an input a numerical value and returns a probability. If this function is inverset, we get a function that takes a probability and returns a numerical value. 
+For this to work, invertinga CDF of an exponentional random variable for example, hs to give exactly only one number on the x-axis. On the other hand, the inversion method works differently on discrete random variables. In that case the relationship is many-to-one, that is multiple random numbers can be mapped onto one random variate.
+Finally it should be emphasized that only CDFs of continous random variables and PMF of discrete random variables can be inversed. This is because these two functions are actual probability functions. The PDF of a continous random variable is a not a probability function since it can take values greater than one.
+
+*** The rejection method
+The inversion method fails if you do not have a closed-form expression for the CDF. it can stilll be possible to approcximate the CDF but this requires a significant amount of computational time. 
+Because of these two reasons, the rejection method was invented.
+In this method, the PDF of the random variable is used instead of the CDF. 
+In this method, x is randomly assigned a value from its set of vlues. Then a uniform number is generated and then used in the comparison.
+
+*** The Composition Method
+An interesting fact is that the linear combination of CDFs, PDFs, or PMFs is also a CFD, PDF or PMF, repsectively. The only requirement is that the weights used in the combinations should add up to one. Hence, a probability distribution can be represented as a mixture of simpler probability distribution functions.
+The Composition Method works as follows. First, the probability function is decomposed into a weighted sum of K simpler probability functions.
+Secondly, one of the probability distribution that appear in the composition is randomly selected. f_i is selected with probability p_i. Finally, a sample is generated using the selected probability distribution function by using either the inversion or rejection method.
+
+*** The convolution method
+Consider a random variable Y whose probability distributon is complex and thus it is not possible to sample from it. However, this random variable can be expressed as a sum of K random variables whose probability distribution can be different but they are easy to sample from. in this case, the convolution method can be used to generate samples of Y.
+
+*** Specialized methods
+The Poisson distribution is typically used to model the arrivals in a communication system. 
+The Normal distribution is another methods which can be used for this.
+
+** Random Number Generation
+Random numbers are usind in the generation of random variates. A random number u is uniformly distributed between 0 and 1.
+
+*** Pseudo-random
+Random Numbers generated by a random number generator must follow a uniform distribution. In addition it must have the following charateristics:
+mean = 1/2
+Variance = 1/12
+Expectation of the autocorrelation = 1/4
+
+*** Characteristic of a good generator
+RNGs are the main source of randomness in simulation programs. They are actually programs whose behaviour is deterministic. Once its initial state (called the seed) is set, a RNG produces a deterministic and periodic sequence of numbers. This is why they are called pseudo-random. 
+Other deisred characteristic of a good RNG are uniformity and independence.
+
+*** A Bit of Number Theory
+**** Prime numbers
+A Prime number is a positive integer that is greater than one and has two divisor only: one and itself.
+3, 5, 7, 11, 13, 17, 19, 23, ...
+Prime numbers are crucial in random number generation. Parameters of RNG algorithms are often recommended to be large prime numbers.
+
+**** The modulo operator
+The modulo operation finds the remainder of the division of one integer number by another. 
+The modulo is computed as follow:
+m = a - floor(a/b) * b
+where b > 0
+
+**** Primitive roots for a prime number
+For a prime number p, the number b is one of its primitive roots if the set of powers of b (e.g. b^0, b^1, b^2, ...) includes all the numbers in the set {1, 2, 3, .... , p-1}, which is the set of all possible remainder except 0.
+
+**** The Linear congruential method
+This method is one of the most popular one. consider the following relation:
+X_{n+1}=(a.X_n+c) mod m, n\ge0
+where a, c and m are called multiplier, increment and modulus respectively.
+the initial X_0 is referred to as the seed. Then random number u_n is obtained as follows:
+u_n = X_n / m
+Clearly if a, c and m are fixed, then different seeds would give different sequences of random numbers. For every run, the seed must be recorder, this is important if the simulation run is to be exactly reproduced/ replicated.
+
+**** Prime modulus
+A multiplicative RNG with a prime modulus will achieve the maximum period if the multiplier a is a primitive root for M.
+
+*** Linear Feedback Shift Registers
+A Linear Feedback Shift Register (LFSR) is a digital device that consists of memory cells  and exclusive-OF (XOR) gates. it can generate a sequence of random binary numbers.
+For the four-bit LFSR, its characteristic polynomial is c(x) = 1 + x^3 + x^4 and it is constructed as follows:
+1. Since the characteristic polynomial is of degree n = 4, then four memory cells are required
+2. Each term present in the characteristic polynomial (except x^0 and x^n) corresponds to an XOR gate. In this case, an XOR gate is inserted between memory cell one and zero since this place corresponds to x^3
+3. An initial binary number is loaded into the memory cells (i.e. seed)
+
+Now the LFSR is ready and random binary numbers can be generated.
+
+*** Statistical testing of RNG
+Typically a sequence of random numbers is acepted if it stisfies two conditions: uniformity and independence. Two standard statistical tests are used for checking these two conditions. The first test is referred to as the chi-squared test (\chi^2 test). Thi test ensures that no number occurs more often than the other numbers. This way the numbers are uniformly distributed. 
+The second test which is referred to as the poker test ensures that there is no correlation between the successive random numbers. This way the numbers are independent from each other. A RNG is accepted if it passes these two tests. 
+
+**** The Chi-Squared Test
+This test is mainly used for determining how well the observed data fit the theorethically expected data. The test performed as follows:
+1. Divide the interval [0, 1[ into K non-overlapping subintervals of equal length.
+2. Determine O_i for each subinterval i, where o_i is the number of random numbers that fall in subinterval i and 1 \le i \le K
+3. Determine E_i for each subinterval i, where E_i is the expected number of random numbers that should fall in subinterval i
+4. Compute the Chi-Squared statistic \chi^2 given by the equation
+$ \chi^2 = \sum^K_{i=1} \frac{(O_i - E_i)^2}{E_i} $
+5. For a level of significance \alpha, if \chi^2 \le \chi^2_{K-1,1-\alpha} then it is concluded that the random numbers in the given sequence are uniformaly distributed with ((1-\alpha) x 100)% level of confidence.
+
+**** The Poker Test
+A sequence of random numbers might be uniformly distributed and yet not random. This because because the random numbers may be related. The poker test is used to detect any such relationship. However, before applying the poker test, the sequence of random numbers must be pre-processed using the following two steps:
+1. Remove the decimal pojnt in every rando number
+2. Choose the first five digits in every random number. You may need to round the numbers.
+Following the above procedure, we will end up with a sequence of five digit numbers. 
+
+**** The Spectral Test
+The test is used for detecting correlations among random numbers. Basically, the random numbers are grouped into triplets. These triplets are plotted in 3D space.
+Planes will emerge if the random numbers are correlted.
+
+
+
