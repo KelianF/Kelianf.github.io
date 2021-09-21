@@ -1,5 +1,1087 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS</title><link>https://kelianf.github.io/</link><description>On a quest for understanding.</description><atom:link href="https://kelianf.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Thu, 24 Jun 2021 03:57:45 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>A Hunger Artist</title><link>https://kelianf.github.io/posts/the-hunger-artist/</link><dc:creator>Kelian</dc:creator><description>&lt;div&gt;&lt;p&gt;Recently red A Hunger Artist by Kafka.&lt;/p&gt;
+<?xml-stylesheet type="text/xsl" href="assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS</title><link>https://kelianf.github.io/</link><description>On a quest for understanding.</description><atom:link href="https://kelianf.github.io/rss.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Tue, 21 Sep 2021 09:36:38 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Computer Simulation: A Foundational Approach</title><link>https://kelianf.github.io/posts/computer-simulation-a-foundational-approach/</link><dc:creator>Kelian</dc:creator><description>&lt;p&gt;
+The book is separated in Five parts: I. The Fundamentals, II. Managing Complexity, III. Problem Solving, IV. Scources of Randomness, and V. Case Studies.
+&lt;/p&gt;
+
+&lt;p&gt;
+.. image:: /images/CompSim&lt;sub&gt;FoundationalApproach&lt;/sub&gt;/PremieredeCouverture.jpg
+&lt;/p&gt;
+
+
+
+&lt;p&gt;
+or:
+&lt;/p&gt;
+
+&lt;p&gt;
+&amp;lt;img src="/images/CompSim&lt;sub&gt;FoundationalApproach&lt;/sub&gt;/PremieredeCouverture.jpg"&amp;gt;
+&lt;/p&gt;
+
+
+&lt;div id="outline-container-orgecf747a" class="outline-2"&gt;
+&lt;h2 id="orgecf747a"&gt;I. The Fundamentals&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgecf747a"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgc4d3c7a" class="outline-3"&gt;
+&lt;h3 id="orgc4d3c7a"&gt;Introduction&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc4d3c7a"&gt;
+&lt;p&gt;
+So, what is a simulation? It is the process of representing a system by a model and then executing this model to generate raw data. The model is a conceptual representation of the system, an approximation. The raw data is also referred to as simulation data. 
+&lt;/p&gt;
+
+&lt;p&gt;
+A simulation process can be divided in 6 steps:
+&lt;/p&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;The problem description. When starting, a question should be gven to then find an answer.&lt;/li&gt;
+&lt;li&gt;System description. It could be for example the different states and agents (to use a RL language)&lt;/li&gt;
+&lt;li&gt;Model construction. This is an iterative process, in which the goal is to formulate a formal description of the system.&lt;/li&gt;
+&lt;li&gt;Computer Program. Code it up.&lt;/li&gt;
+&lt;li&gt;Statistical Analysis. Select relevant metrics and monitor them; for example Sharpe, VaR and Calmar Ratio in Finance.&lt;/li&gt;
+&lt;li&gt;Performance Summary. Last part, the answer to the question with given confidence interval and conclusion as well as possible recommendations.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org1840bb9" class="outline-3"&gt;
+&lt;h3 id="org1840bb9"&gt;Building Conceptual Model&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org1840bb9"&gt;
+&lt;p&gt;
+A conceptual model is a representation of a system using specialized concepts and terms (e.g. a mathematical model for of a system is constructed using specialized concepts such as constants, variables, functions…). 
+&lt;/p&gt;
+
+&lt;p&gt;
+A conceptual model can be constructed using five elements: 
+&lt;/p&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Entity, it represent the object in the system that must be explicitely captured in the model in order to be able to describe the overall operation of the system.&lt;/li&gt;
+&lt;li&gt;Attributes, related to the entity (e.g. arrival time, weight, ..)&lt;/li&gt;
+&lt;li&gt;State Variable, The state of the system under study is represented by a set of state variables, which each track a property of a static entity over time.&lt;/li&gt;
+&lt;li&gt;Event, It represents the occurence of something interesting inside the system. It is a stimulus that cause the system to change its state.&lt;/li&gt;
+&lt;li&gt;Activities, are the action performed by the system for a finite duration of time.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-orgf85f884" class="outline-3"&gt;
+&lt;h3 id="orgf85f884"&gt;Simulation Probabilities&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgf85f884"&gt;
+&lt;p&gt;
+A probability is a number between 0 and 1, inclusive. It is assigned to each possible outcome in the sample space of a random experiement. Probabilities must be assigned to outcomes in such a way that they add up to one. Then the probability of an event is is simply the sum of the proobabilities of the individual outcomes making up the event.
+&lt;/p&gt;
+
+&lt;p&gt;
+The Axioms of Probability:
+&lt;/p&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;∃ outcome w&lt;sub&gt;i&lt;/sub&gt; ∈ Ω, P(w&lt;sub&gt;i&lt;/sub&gt;) ∈ [0, 1],&lt;/li&gt;
+&lt;li&gt;∀ Outcomes w&lt;sub&gt;i&lt;/sub&gt; ∈ Ω, ∑&lt;sub&gt;i&lt;/sub&gt; P(w&lt;sub&gt;i&lt;/sub&gt;) = 1,&lt;/li&gt;
+&lt;li&gt;For each event E&lt;sub&gt;j&lt;/sub&gt; ⊂ Ω, P(E&lt;sub&gt;j&lt;/sub&gt;)=∑&lt;sub&gt;i&lt;/sub&gt; P(w&lt;sub&gt;i&lt;/sub&gt;), where w&lt;sub&gt;i&lt;/sub&gt; ∈ E&lt;sub&gt;j&lt;/sub&gt;,&lt;/li&gt;
+&lt;li&gt;∀ Possible disjoint events E&lt;sub&gt;j&lt;/sub&gt; ⊂ Ω:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+$P({∪&lt;sub&gt;j&lt;/sub&gt; E&lt;sub&gt;j&lt;/sub&gt;}) = ∑&lt;sub&gt;j&lt;/sub&gt; P(E&lt;sub&gt;j&lt;/sub&gt;) $
+&lt;/p&gt;
+
+
+&lt;p&gt;
+The Law of Large number 
+&lt;/p&gt;
+
+&lt;p&gt;
+Let x&lt;sub&gt;1&lt;/sub&gt;, x&lt;sub&gt;2&lt;/sub&gt;, …, x&lt;sub&gt;n&lt;/sub&gt; be a set of sample (realization/outcomes of a random experiement), then with probability 1:
+&lt;/p&gt;
+
+&lt;p&gt;
+&amp;lt;center&amp;gt;\(lim_{x\to\infty}\frac{x_1 + x_2 + ... + x_n}{n}\)&amp;lt;/center&amp;gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+converges to the population mean. That is, the running mean will eventually converge to the population mean.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-org2ef6569" class="outline-3"&gt;
+&lt;h3 id="org2ef6569"&gt;Simulating Random Variables and Stochastic Processes&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org2ef6569"&gt;
+&lt;p&gt;
+A dynamic system can be viewed as either a sequence of random variables or a stochastic process.
+In the former, the system evolves in discrete steps and its state changes at discrete instants of time.
+In the latter, however, the system evolves continuously over time and the times at which events occur cannot be predicted.
+Random variables are mathematical abstractions which are defined on the sample space of a random experiement. In other term, a random variable is a function which associate a probability whith each possible outcome of a random experiement.
+&lt;/p&gt;
+
+
+
+&lt;p&gt;
+Probability Mass functions refers to the probability function for a discrete random variable. 
+The PMF is defined as follow:
+p&lt;sub&gt;X&lt;/sub&gt;(x) = P[X=x]I
+t follows the two following properties:
+&lt;/p&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;p&lt;sub&gt;X&lt;/sub&gt;(x) ≥ 0, and&lt;/li&gt;
+&lt;li&gt;∑&lt;sub&gt;x&lt;/sub&gt; p&lt;sub&gt;X&lt;/sub&gt;(x) = 1&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;
+Cumulative Distribution Function of a dicrete random variable X, denoted F&lt;sub&gt;X&lt;/sub&gt;(x), is defined as follow:
+F&lt;sub&gt;X&lt;/sub&gt;(x)=P(X ≤ x)
+     =∑&lt;sub&gt;(i≤ x)&lt;/sub&gt;P&lt;sub&gt;x&lt;/sub&gt;(i)
+&lt;/p&gt;
+
+&lt;p&gt;
+Basically, the CDF gives the probability that the value of the random variable X is less than or equal to x. Thus, it is a monotonically non-decreasing function of X.
+&lt;/p&gt;
+
+
+&lt;p&gt;
+Probability Density Function is the equivalent of PMF but for continous function. The PDF is a non-negative, continous function denoted by f&lt;sub&gt;X&lt;/sub&gt;(x).
+Here is the relationship between PDF and CDF:
+$ f&lt;sub&gt;X&lt;/sub&gt;(x) = \frac{d}{dx}F&lt;sub&gt;X&lt;/sub&gt;(x) $
+$ F&lt;sub&gt;X&lt;/sub&gt;(x) = ∫&lt;sub&gt;-∞&lt;/sub&gt;^∞ f&lt;sub&gt;X&lt;/sub&gt;(x)dx
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org1e1871b" class="outline-4"&gt;
+&lt;h4 id="org1e1871b"&gt;Some Useful Random Variables&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org1e1871b"&gt;
+&lt;/div&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a id="orge1f480e"&gt;&lt;/a&gt;Bernoulli&lt;br&gt;
+&lt;div class="outline-text-5" id="text-orge1f480e"&gt;
+&lt;p&gt;
+Also called an Indicator Function. 
+&lt;/p&gt;
+
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col class="org-left"&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;p,      if x = 1,&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;
+p&lt;sub&gt;X&lt;/sub&gt;(x) = | 
+&lt;/p&gt;
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col class="org-left"&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;1 - p,  if x = 0&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;
+With the mean and variance as follow:
+μ = p
+σ&lt;sup&gt;2&lt;/sup&gt; = p(1-p)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="orgc77bbcb"&gt;&lt;/a&gt;Binomial&lt;br&gt;
+&lt;div class="outline-text-5" id="text-orgc77bbcb"&gt;
+&lt;p&gt;
+The binomial random variable is an extension of the Bernoulli random variable, where the number of trials n is another parameter of the new random experiement. Basically, the Bernoulli experiement (or trial) is repeated n times.
+&lt;/p&gt;
+
+&lt;p&gt;
+p&lt;sub&gt;X&lt;/sub&gt;(x) = (&lt;sup&gt;n&lt;/sup&gt;&lt;sub&gt;x&lt;/sub&gt;)p&lt;sup&gt;x&lt;/sup&gt;(1-p)&lt;sup&gt;(n-x)&lt;/sup&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+With respective mean and variance:
+μ = np
+σ&lt;sup&gt;2&lt;/sup&gt; = np(1-p)
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org574e3b6"&gt;&lt;/a&gt;Geometric&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org574e3b6"&gt;
+&lt;p&gt;
+The random experiment of repeating a Bernoulli trial until the first success is observed is modeled by a geometric random variable. This random variable can also be defined as the number of failure until the first success occurs.
+The PMF for a geometric random variable is the following:
+p&lt;sub&gt;X&lt;/sub&gt;(x) = p(1-p)&lt;sup&gt;x&lt;/sup&gt;
+where p is the probability of sucess in a single Bernoulli trial and x ∈ {0, 1, 2, 3, …}.
+With:
+$ μ = \frac{1-p}{p} $
+$ σ&lt;sup&gt;2&lt;/sup&gt; = \frac{1-p}{p^2}
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="orgd6f7a4a"&gt;&lt;/a&gt;Poisson&lt;br&gt;
+&lt;div class="outline-text-5" id="text-orgd6f7a4a"&gt;
+&lt;p&gt;
+A Poisson random variable X is a discrete random variable which has the following probability mass function:
+$ P(X=x) = \frac{\lambda^x. e^-\lambda}{x!} $
+Where P(X=x) is the probability of x events occurring in an interval of preset length and λ is the expected number of events occuring in the same interval.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org6878231"&gt;&lt;/a&gt;Uniform&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org6878231"&gt;
+&lt;p&gt;
+A uniform random variable X is a continuous random variable that has the following cumulative distribution function:
+$ F(x) = \frac{x-a}{b-a} $
+&lt;/p&gt;
+
+&lt;p&gt;
+The Probability density function is:
+&lt;/p&gt;
+
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col class="org-left"&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;1/(b-a) , for  x ∈ [a, b]&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;
+f&lt;sub&gt;X&lt;/sub&gt;(x) = |
+&lt;/p&gt;
+&lt;table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides"&gt;
+
+
+&lt;colgroup&gt;
+&lt;col class="org-left"&gt;
+&lt;/colgroup&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td class="org-left"&gt;0, otherwise&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;
+The mean and variance are:
+$ μ = \frac{1}{2}(a + b) $
+$ σ&lt;sup&gt;2&lt;/sup&gt; = \frac{1}{12}(b - a)&lt;sup&gt;2&lt;/sup&gt; $
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org8d0d219"&gt;&lt;/a&gt;Exponential&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org8d0d219"&gt;
+&lt;p&gt;
+An exponential random variable is a continuous random variable which has the following cumulative distribution function:
+$ F&lt;sub&gt;X&lt;/sub&gt;(x) = 1 - e&lt;sup&gt;-μλ&lt;/sup&gt; $
+whilst the PDF is given by:
+$ f&lt;sub&gt;X&lt;/sub&gt;(x) = μ.e&lt;sup&gt;(-μ x)&lt;/sup&gt;
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;&lt;a id="org23b3327"&gt;&lt;/a&gt;Erlan&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org23b3327"&gt;
+&lt;p&gt;
+The Erlang random variable is continuous. It can be expressed as a sum of exponential random variables. This random variable has two parameters:
+&lt;/p&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;θ: Scale or rate, and&lt;/li&gt;
+&lt;li&gt;κ: Shape&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+The PDF:
+$ f(x) = \frac{x^(k-1)\theta^ke^(-\theta.x)}{(k-1)!}  ; x≥0 $
+&lt;/p&gt;
+
+&lt;p&gt;
+The CDF:
+$ F(x) = 1 - e&lt;sup&gt;(-θ.x)&lt;/sup&gt; ∑&lt;sub&gt;(j=0)&lt;/sub&gt;&lt;sup&gt;(k-1)&lt;/sup&gt; \frac{(\theta.x)^j}{j!} $
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org9fec141"&gt;&lt;/a&gt;Normal&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org9fec141"&gt;
+&lt;p&gt;
+The normal (or Gaussian) random variable is a continous random variable that has the following probability density function:
+$ f(x) = \frac{1}{\sigma.(2\pi)^(1/2)}.e&lt;sup&gt;(\frac{-(x-\mu)^2}{2\sigma^2})&lt;/sup&gt; $
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="orgc5d8ee3"&gt;&lt;/a&gt;Triangular&lt;br&gt;
+&lt;div class="outline-text-5" id="text-orgc5d8ee3"&gt;
+&lt;p&gt;
+The triangular random variable has three parameters: a, b and c. The last parameter is referred to as the mode.
+&lt;/p&gt;
+
+&lt;p&gt;
+The CDF:
+F&lt;sub&gt;X&lt;/sub&gt;(x) = 
+0, if x ≤ a,
+$\frac{(x-a)^2}{(b-a)(c-a)} $ , if a &amp;lt; x ≤ c,
+$ 1 - \frac{(b-x)^2}{(b-a)(b-c)}$ , if c &amp;lt; x &amp;lt; b
+1 , if x ≥ b
+&lt;/p&gt;
+
+&lt;p&gt;
+The PDF :
+f&lt;sub&gt;X&lt;/sub&gt;(x) = 
+0 if x &amp;lt; a
+$ \frac{2(x-a)}{(b-a)(c-a)} $ , if a ≤ x &amp;lt; c
+$ \frac{2}{b-a} $ if x = c
+$ \frac{2(b-x)}{(b-a)(b-c)} $ , if c &amp;lt; x ≤ b
+0 if x &amp;gt; b
+&lt;/p&gt;
+
+&lt;p&gt;
+The mean and variance are:
+$ μ = \frac{a + b + c}{3} $
+$ σ = \frac{a^2 + b^2 + c^2 - ab - ac - bc}{18}
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-orgad922b0" class="outline-4"&gt;
+&lt;h4 id="orgad922b0"&gt;Stochastic Processes and dynamic systems&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgad922b0"&gt;
+&lt;p&gt;
+A random variable cannot be used to describe the behaviour of a dynamic system since it does not involve time. Enter the world of stochastic processes. At every instant in time, the state of the process is random. Since time is fixed, we can thinkk of the state of the process as a random variable at that specific instant.
+&lt;/p&gt;
+
+&lt;p&gt;
+Ergodic system: IF a dynamic system is run for a long perios of time, then each possible system state would be visited. Then, the mean over the state space (i.e. ensemble mean) can be approximated by the mean of a sample path through the state space (i.e. temporal space). Such dynamic systems are referred to as ergodic system, wherein the temporal mean converges to the ensemble mean.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-orga985c0c" class="outline-4"&gt;
+&lt;h4 id="orga985c0c"&gt;Simulating Queueing processes&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orga985c0c"&gt;
+&lt;/div&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a id="org17821dc"&gt;&lt;/a&gt;Discrete-time Markov Chains&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org17821dc"&gt;
+&lt;p&gt;
+A discrete-time Markov chain stays in any state for an amount of time which is geometrically distributed. A Markov Chain is said to be fully characterized if its probability transition matrix is known. 
+An entry P&lt;sub&gt;ij&lt;/sub&gt; in this matrix represents the probability that the process will make a transition from state i to state j, where i is the present state and j is the next state. 
+Consider a Discrete-Time MArkov Chain with two states: Good (G) and Bad (B). Let the transition Matrix of this DMTC be the following:
+&lt;/p&gt;
+
+&lt;p&gt;
+P(i, j) = \bordermatrix{ &amp;amp; G &amp;amp; B \cr
+G &amp;amp; .5 &amp;amp; .5 \cr
+B &amp;amp; .7 &amp;amp; .3 \qquad
+&lt;/p&gt;
+
+&lt;p&gt;
+Noticing that every row and colun is labeled. This matrixx is an example of the classical Gilbert-Elliot two-state wireless channel model.
+&lt;/p&gt;
+
+&lt;p&gt;
+Given that the present state is X&lt;sub&gt;n&lt;/sub&gt; = G, the next state X&lt;sub&gt;(n+1)&lt;/sub&gt; has the following PMF:
+P(X&lt;sub&gt;(n+1)&lt;/sub&gt; = G  X&lt;sub&gt;n&lt;/sub&gt; = G) = .5; P(X&lt;sub&gt;(n+1)&lt;/sub&gt;=B | X&lt;sub&gt;n&lt;/sub&gt; = G) = .5
+and assuming that X&lt;sub&gt;n&lt;/sub&gt; = B then the next state X&lt;sub&gt;(n+1)&lt;/sub&gt; has the following PMF:
+P(X&lt;sub&gt;(n+1)&lt;/sub&gt; = G | X&lt;sub&gt;n&lt;/sub&gt; = B) = .7; P(X&lt;sub&gt;(n+1)&lt;/sub&gt; = B | X&lt;sub&gt;n&lt;/sub&gt; = G) = .3
+&lt;/p&gt;
+
+&lt;p&gt;
+Since we know the PMF for the next state given any present state, we can now simulate the DTMC.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;&lt;a id="orga54cffa"&gt;&lt;/a&gt;Continuous-time Markov Chain&lt;br&gt;
+&lt;div class="outline-text-5" id="text-orga54cffa"&gt;
+&lt;p&gt;
+When a continuous-time Markov chain enters a state, it remains in the state for an amount of time exponentially distributed.
+&lt;/p&gt;
+
+
+
+
+&lt;p&gt;
+A Poisson process is an example of a Continous-Time Markov Chain. The time between two consecutive events is called the Inter-Arrival Time (IAT). The random variable IAT has an exponential distribution. Only one kind of event triggers a transition inside a Poisson process, this event is the arrival event. 
+&lt;/p&gt;
+
+&lt;p&gt;
+The Poisson Process is a special case of another type of random processes called Birth-Date Processes. In a BD Process, two events occur: Birth and Death. The Poisson process is a pure Birth process, since the Birth (i.e. arrival) event occurs only. The state of a BD process changes at random points of time. The state variable is incremented by only one when a birth event occurs. it is decremented by one, on the other hand, when a Death occurs. The time until the next birth is exponenetially distributed with rate λ. Similarly, the time until the next death is exponentially distributed with a rate μ.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org0d7fbfb" class="outline-3"&gt;
+&lt;h3 id="org0d7fbfb"&gt;Simulating the Single-Server Queueing System&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org0d7fbfb"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org06db17d" class="outline-4"&gt;
+&lt;h4 id="org06db17d"&gt;Simulation Model&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org06db17d"&gt;
+&lt;p&gt;
+A single server queuing system is composed of four components: Source, Buffer, Server and Sink.
+The Source generates packets which go into a FIFO buffer, the server fethes the packets from the buffer and then deliers them to the sink after they are processed.
+Since the individual inter-arrival times and service times are unpredictable, they shoul be modelled as random variables. Thus we need to specify the probability distribution of these random variables. The choice of a specific probability distribution has to be supported by an evidence that it is appropriate. The exponential probability distribution is a reasonable model of the inter-arrival and service time.
+&lt;/p&gt;
+
+&lt;p&gt;
+What cause Delay?
+→ When multiple packets contend for one server, some packets will be queued and system performance suffers. If the service time is always less than or equal to the inter-arrival time, no packet is queued. In reality, however, the service time and inter-arrival times are not constant. Also, packets may require different service times. This variability in service times and inter arrival times causes the delay through the single-server queueing system.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orge518eac" class="outline-4"&gt;
+&lt;h4 id="orge518eac"&gt;Performance Laws&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orge518eac"&gt;
+&lt;p&gt;
+Throughput, it measures how many packets the system can process in one time unitl. It is defined as the ratio of the number of departure divided by the total simulation time. Mathematically, this law can be written as follow:
+$ τ = \frac{D}{T} $
+&lt;/p&gt;
+
+&lt;p&gt;
+Utization, ro server utilization, is the proportion of simulation time during which the server is busy. It is the product of its throughput and the average service time per customer. This can be mathematically be expressed as follows:
+U = τ . T&lt;sub&gt;s&lt;/sub&gt;
+Where T&lt;sub&gt;s&lt;/sub&gt; is the average service time per customer and it is defined as follows:
+$ T&lt;sub&gt;s&lt;/sub&gt; = \frac{B}{D} $
+&lt;/p&gt;
+
+&lt;p&gt;
+Where B is the total server busy time which can be computed as follows:
+B = ∑&lt;sub&gt;(i=1)&lt;/sub&gt;&lt;sup&gt;D&lt;/sup&gt; T&lt;sub&gt;i&lt;/sub&gt;
+Where T&lt;sub&gt;i&lt;/sub&gt; is the service time for customer i.
+&lt;/p&gt;
+
+&lt;p&gt;
+Response Time, it is the total time a customer spends in the system. This includes waiting time and service time. it is defined as:
+$ W = \frac{\sum_(i=1)^D W_i}{D} $
+As a consequence the average number of packets in the system can be computed as follows:
+L = τ . W
+&lt;/p&gt;
+
+&lt;p&gt;
+Little's Laws
+L = λ . W
+This law asserts that the time average number of packets in the system is the product of the arrival rate and the response time. This law is due to Little Who proved it in 1961. With λ is a parameter of the arrival Poisson process.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orge3ce566" class="outline-4"&gt;
+&lt;h4 id="orge3ce566"&gt;E[N(t)]&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orge3ce566"&gt;
+&lt;p&gt;
+The state variable N(t) represents the number of packets in the system at time t. 
+In the previous section we saw that Little's Law can be used to compute the average number of customers in the system (i.e. E[N(t)]). This quantity can be directly computed by using one sample path of N(t) as follow.
+&lt;/p&gt;
+
+&lt;p&gt;
+$ E[N(t)] = \frac{1}{T} . ∫&lt;sub&gt;0&lt;/sub&gt;&lt;sup&gt;T&lt;/sup&gt; N(t) $
+Where T is the total simulation time.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org3ad0669" class="outline-4"&gt;
+&lt;h4 id="org3ad0669"&gt;P[N]&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org3ad0669"&gt;
+&lt;p&gt;
+P[N = k] is the probability that there are exactly k packets in the system. In order to estimate this probability, we sum up all time intervals during which there are exactly k packets in the system. Then, the sum is divided by the total simulation time. 
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgede4d9b" class="outline-4"&gt;
+&lt;h4 id="orgede4d9b"&gt;Transcient and steady phase&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgede4d9b"&gt;
+&lt;p&gt;
+A simulation goes through two phases: transcient and steady. 
+In the transcient phase, the values of the output variable vary dramatically. They are significantly different from the theoretical values computed using standard queueing theory formulas. Output variables fluctuate during the transcient phase due to the effect of the initial state of the simulation model.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div id="outline-container-orgbf68a48" class="outline-3"&gt;
+&lt;h3 id="orgbf68a48"&gt;Statistical Analysis of Simulated Data&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgbf68a48"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org17d8460" class="outline-4"&gt;
+&lt;h4 id="org17d8460"&gt;Population and Samples&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org17d8460"&gt;
+&lt;p&gt;
+Sample Mean:
+$ \bar{x} = \frac{1}{n} ∑&lt;sub&gt;(i=1)&lt;/sub&gt;&lt;sup&gt;n&lt;/sup&gt; X&lt;sub&gt;i&lt;/sub&gt; $
+&lt;/p&gt;
+
+&lt;p&gt;
+Sample Variance:
+$ S&lt;sup&gt;2&lt;/sup&gt; = \frac{1}{1 - n} ∑&lt;sub&gt;(i=1)&lt;/sub&gt;&lt;sup&gt;n&lt;/sup&gt;(X&lt;sub&gt;i&lt;/sub&gt; - \bar{x})&lt;sup&gt;2&lt;/sup&gt; $
+&lt;/p&gt;
+
+&lt;p&gt;
+Sample standard deviation:
+$ S = \sqrt{S^2} $
+&lt;/p&gt;
+
+&lt;p&gt;
+The notation for sample and population statistic is as follow:
+Mean: $ \bar{X} $ (Sample), μ (Population)
+Variance: S&lt;sup&gt;2&lt;/sup&gt; (Sample), σ&lt;sup&gt;2&lt;/sup&gt; (Population)
+Standard Deviation: S (Sample), σ (Poupulation)
+&lt;/p&gt;
+
+&lt;p&gt;
+ &lt;b&gt;*&lt;/b&gt; Central Limit Theorem
+Regardless of the probability distribution of the population mean, the probability distribution of the sample mean is always normal. The mean of this normal distribution is the theoretical mean and the standard deviation is the standard error.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org90731eb" class="outline-4"&gt;
+&lt;h4 id="org90731eb"&gt;Confidence interval&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org90731eb"&gt;
+&lt;p&gt;
+A ((1 - α) . 100)% confidence interval for a population mean μ is given by:
+&lt;/p&gt;
+
+&lt;p&gt;
+$ \bar{x} ± t . \frac{x}{sqrt{n}} $
+&lt;/p&gt;
+
+&lt;p&gt;
+with:
+t is a random variable that has a student-t distribution with (n - 1) degrees of freedom.
+\(\bar{x}\) is the sample mean
+s is the sample standard deviation
+n is the sample size
+1- α is the confidence level
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-org0f2150a" class="outline-2"&gt;
+&lt;h2 id="org0f2150a"&gt;II. Managing Complexity&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0f2150a"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org8fe3979" class="outline-3"&gt;
+&lt;h3 id="org8fe3979"&gt;Event Graph&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org8fe3979"&gt;
+&lt;p&gt;
+George Box: "All models are wrong, but some are useful."
+&lt;/p&gt;
+
+&lt;p&gt;
+Event graphs are a formal modeling tool which can be used for building discrete-event simulation models. It shows the scheduling relationships between events which occur inside the sytem. An event graph is constructed using vertices and directed edges with attributes and conditions. 
+&lt;/p&gt;
+
+&lt;p&gt;
+Translating event graphs into code is the main part of this category. The propozed high-level concepts will help in mechanizing the translation process and enhancing the maintainability of the resulting code.
+These high level processes are the following:
+&lt;/p&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Event type&lt;/li&gt;
+&lt;li&gt;Event generator&lt;/li&gt;
+&lt;li&gt;Event handler&lt;/li&gt;
+&lt;li&gt;Initial event&lt;/li&gt;
+&lt;li&gt;Simulation loop&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+An event type is the base concept and it includes two subconcepts: event generator and event handler. The event generator is an abstraction of a block of code which returns a realization of an event type.
+On the other hand an event handler is an abstraction of a block of codewhich updates the state of the simulation model in response to an event. Two tasks are performed inside the handler: 1. Updating state variables and 2. Scheduling next events. After an event is fully executed, coontrol is returned to the main simulation loop.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org39ba139" class="outline-3"&gt;
+&lt;h3 id="org39ba139"&gt;Building Simulation Programs&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org39ba139"&gt;
+&lt;p&gt;
+Simulation programs are either time-driven or event-driven. In both cases the state of the simulation model is updated at discrete points in time.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgf4aca9d" class="outline-4"&gt;
+&lt;h4 id="orgf4aca9d"&gt;Time-Driven Simulation&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgf4aca9d"&gt;
+&lt;p&gt;
+This simulation approach is also reffered to as discrete-time simulation. The reason for this name is because the simulation evolves in discrete steps, slots, of size Δ.t.
+&lt;/p&gt;
+
+&lt;p&gt;
+The single-server queueing system can be modeled in two ways: discrete-time and continuous-time. In discrrete-time queues, time evolves in discrete steps of the same size. On the other hand, in continous time queues, events can occur at any point on the time line.
+Continous time uses Poisson Distribution for Arrival and Departure Processes and  Exponential for Inter-Arrival and service times; whilst Discrete-time uses Bernoulli for Arrival and Derparture and Geometric for Inter-arrival and Service Times.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5b5043a" class="outline-4"&gt;
+&lt;h4 id="org5b5043a"&gt;Event-Driven Simulation&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org5b5043a"&gt;
+&lt;p&gt;
+This approach to simulation is also called discrete-event suimulation. In this type of simulation, time evolves in discrete steps of random sizes. Hence, events happen at random point on the time line. Also, the time between two consecutive events is random.
+An event driven simulation program consists of two components: simulator and model. Events are generated by the model, they are applied back to the model by the simulator. The simulator is responsible for maintaining the temporal order of events using the event list. It is also responsible for keeping the current simulated time up to date. 
+The simulator contains a Random Number Generator, which generate random numbers which are then used to drive the Random Variate Generator. 
+It follows:
+Seed → Random Number Generator → Random Variate Generator → Random Event Generator → Event
+&lt;/p&gt;
+
+&lt;p&gt;
+A Flowchart of the event-driven simulation can be separated in 4 components:
+&lt;/p&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Initialization:&lt;/li&gt;
+&lt;li&gt;Simulation Parameters&lt;/li&gt;
+&lt;li&gt;State Variables&lt;/li&gt;
+&lt;li&gt;Output variable- Event list&lt;/li&gt;
+&lt;li&gt;clock = 0&lt;/li&gt;
+
+&lt;li&gt;Simulation loop&lt;/li&gt;
+&lt;li&gt;EV = EventList.nextEvent()&lt;/li&gt;
+&lt;li&gt;clock = ev.Time&lt;/li&gt;
+&lt;li&gt;ev.EventHandler( clock )&lt;/li&gt;
+
+&lt;li&gt;Event Handler for event type 1:&lt;/li&gt;
+&lt;li&gt;Update state and output variables&lt;/li&gt;
+&lt;li&gt;Generate and schedule new events&lt;/li&gt;
+
+&lt;li&gt;Output:&lt;/li&gt;
+&lt;li&gt;Compute performance estimates using output variables&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+Several programming issues arise when writing event-driven simulation programs. Below are 3 of the most critical:
+&lt;/p&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Event Collision: An event is represented by a tuple inside each event generator. When inserted into the event list, the field in the tuple is used as a key for sorting the event. When two events have the same key, an event collision is said to have happened.&lt;/li&gt;
+&lt;li&gt;Identifiers for Packets: When recording data in output variables, the order of packets must be maintained. That is, the i&lt;sup&gt;th&lt;/sup&gt; entry in any output variable must correspond to the i&lt;sup&gt;th&lt;/sup&gt; simulated packet. If this order is not maintained, the final statistical results will be wrong.&lt;/li&gt;
+&lt;li&gt;Stopping condition for the simulated loop: There are several options to terminate a simulation loop. 1. Event List becomes empty, 2. Number of simulated packet reaches a preset value, and 3. Maximum allowed simulation time is reached.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;div id="outline-container-orgd9f41e3" class="outline-2"&gt;
+&lt;h2 id="orgd9f41e3"&gt;III. Problem-Solving&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgd9f41e3"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-org16a8d99" class="outline-3"&gt;
+&lt;h3 id="org16a8d99"&gt;The Monte Carlo Method&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org16a8d99"&gt;
+&lt;p&gt;
+The Monte Carlo (MC) method was born during the second world war. It was used in simulation of atommic collisions which then resulted in the first atomic bomb.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5eb9522" class="outline-4"&gt;
+&lt;h4 id="org5eb9522"&gt;Estimating the value of π&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org5eb9522"&gt;
+&lt;p&gt;
+The MC Method can be used to estimate the value of a pareter or constant. For example it can be used to estimate the value of π, which is the ratio of the cirumference of a circle to its diameter; π is approximately equal to 3.14159.
+Consider a full circle with radius r and a centered at the origin. This circle is also enclosed inside a square with an edge length of 2r. A point (x, y) falls inside the circle if the following inequality is satisfied:
+x&lt;sup&gt;2&lt;/sup&gt; + y&lt;sup&gt;2&lt;/sup&gt; ≤ r&lt;sup&gt;2&lt;/sup&gt;
+Both x and y takes values from the interval [-1, 1]. r has fixed value of 1.
+Having a Circle (C) in a Square (S), the probability that a point (x, y) lies inside C is given by:
+$ P[(x, y) ∈ C] = \frac{measure of C}{measure of S} $
+$ = \frac{area of C}{area of S} $
+$ = \frac{\pi.r^2}{4r^2} $
+$ =\frac{\pi}{4} $
+&lt;/p&gt;
+
+&lt;p&gt;
+Hence the following equation for π can be deduced:
+π = 4.P
+Now we have the expression for π but need to find P, the probability of having a point inside C vs S.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgcab940e" class="outline-4"&gt;
+&lt;h4 id="orgcab940e"&gt;Numerical Integration&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgcab940e"&gt;
+&lt;p&gt;
+Let a function f(x)defined over the interval [a, b]. The function f(x) is also enclosed inside a rectangle with width b-a and height c. The curve of f(x) divides the rectangle in two regions I, below f(x), and J above. The area under the curve, I is defined as:
+$ A&lt;sub&gt;I&lt;/sub&gt; = ∫&lt;sub&gt;a&lt;/sub&gt;&lt;sup&gt;b&lt;/sup&gt; f(x)dx $
+The probability that a randomly generated point falls inside region I can be computed as follows:
+$ P = \frac{A_I}{A_J} $
+where the area of region J is equal to A&lt;sub&gt;J&lt;/sub&gt; = c . (b - a).
+Hence the integral can be estimated using the following estimator:
+A&lt;sub&gt;I&lt;/sub&gt; = P.[(b-a).c]
+P=E[Z]
+$ ≈ \frac{1}{N}∑&lt;sup&gt;N&lt;/sup&gt; Z&lt;sub&gt;i&lt;/sub&gt; $
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgc9aa9fe" class="outline-4"&gt;
+&lt;h4 id="orgc9aa9fe"&gt;Estimating Probabilities: Buffon's needle problem&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgc9aa9fe"&gt;
+&lt;p&gt;
+In this problem, a needle of length l is dropped onto a floor with equally spaced horizontal lines, the distance between every consecutive lines is d. The length of the needle is constrain such that l ≤ d. The goal is to estimate the probability that the needle touches or intersect a line.
+The simulation makes use of 2 random variables which uniquely identify the location of the needle on the floor. The two random variables are the following:
+&lt;/p&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;α: distance from the midpoint of the needle to the closest horizontal line (α ∈ [0, d/2])&lt;/li&gt;
+&lt;li&gt;Θ: Angle the needle makes with the  closest line (Θ ∈ [0, π])&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;
+Clearly the needle will intersect a line if a ≤ b. 
+The exact ecpression for the probability is the following:
+$ P = \frac{2l}{\pi.d} $
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;div id="outline-container-org1b34bcb" class="outline-4"&gt;
+&lt;h4 id="org1b34bcb"&gt;Reliability&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org1b34bcb"&gt;
+&lt;p&gt;
+Consider blocks in which the input is connected to the output if the switch is closed. The probability of this event (closed switch) correspond to the portion of time the block is working.
+The state of the system is a set of three random variable (b&lt;sub&gt;1&lt;/sub&gt;, b&lt;sub&gt;2&lt;/sub&gt;, b&lt;sub&gt;3&lt;/sub&gt;) where each random variable corresponds to the state of an individual block in the system.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org5234a52" class="outline-4"&gt;
+&lt;h4 id="org5234a52"&gt;Variance reduction technique&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org5234a52"&gt;
+&lt;p&gt;
+Advanced methods of Monte Carlo can help achieving higher level of accuracy. It can also be ised to estimate probabilities of rare events by changing the probability of distribution of the event of interest.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a id="orgafe2b8d"&gt;&lt;/a&gt;Control variates&lt;br&gt;
+&lt;div class="outline-text-5" id="text-orgafe2b8d"&gt;
+&lt;p&gt;
+Consider a random variable X whose expected value E[X] is to be estimated. Assume there is another random variable Y whose expected value is E[Y] is known. Then, the following is an estimator of E[X]:
+$ E[X] = \frac{1}{n}∑&lt;sup&gt;n&lt;/sup&gt; X&lt;sub&gt;i&lt;/sub&gt;-c(\frac{1}{n}∑&lt;sup&gt;n&lt;/sup&gt; Y&lt;sub&gt;i&lt;/sub&gt;-E[Y]) $
+where c is a constant whch can be estimated using the samples (X, Y) as follows:
+$ c = \frac{∑&lt;sup&gt;n&lt;/sup&gt; (X&lt;sub&gt;i&lt;/sub&gt; - \overline{X})(Y&lt;sub&gt;i&lt;/sub&gt; - \bar{Y})}{∑&lt;sup&gt;n&lt;/sup&gt; (Y&lt;sub&gt;i&lt;/sub&gt; - \overline{Y})} $
+&lt;/p&gt;
+
+&lt;p&gt;
+It has to be noted that n → ∞ ; \(\frac{1}{n}\sum^n Y_i\) → E[Y]
+Hence, the second term evaluates to zero. However since the number of samples is finite, the samples of Y are going to reduce the variance in the estimator of E[X]. The result is an estimator that is better than using only Monte Carlo.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org2e42289"&gt;&lt;/a&gt;Stratified Sampling&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org2e42289"&gt;
+&lt;p&gt;
+In this sampling technique the goal is to stratify samples into groups and then a sample is randomly generated from each group. This way, samples are spread appropriately across the state space.
+Hence in order to estimate the expected value of a function f(x), the sample space of the random variable X is partitioned into K subsets.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;&lt;a id="org5c328dd"&gt;&lt;/a&gt;Antithetic Sampling&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org5c328dd"&gt;
+&lt;p&gt;
+A random variate v has an antithetic value (or variate) that is represented by v'. if v is a random variate uniformly distributed on [a, b], then its antithetic variate is given by:
+v' = a + b - v
+The essence of the antithetic sampling technique is to replace each sample s by another one which can be calculated as follow:
+$ s* = \frac{v + v'}{2} $
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+
+&lt;li&gt;&lt;a id="orge2596e1"&gt;&lt;/a&gt;Dagger Sampling&lt;br&gt;
+&lt;div class="outline-text-5" id="text-orge2596e1"&gt;
+&lt;p&gt;
+In dagger sampling, multiple samples can be generated using a single random number. 
+Dagger sampling works as follow: The interval [0, 1] is divided into S subinterval. The length of each subinterval is p. if the random value falls on the second interval, the overall sample would be [0, 1, 0] or [T, H, T] in the case of a coin flip.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org24eaf3f"&gt;&lt;/a&gt;Importance Sampling&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org24eaf3f"&gt;
+&lt;p&gt;
+in Importance sampling, samples are generated using a new probability distribution q that is more appropriate than the original probability distribution p.
+However, since the new probability distribution q is different from the correct distribution p, a correction step is necessary.
+Imagine a distribution in which region 2  will be generated more frequently because of the large porbabilities over this region. However, the values of the function in region 1 are more important. How is it possible to sample more from that regions? Thi is the reason this method is reffered to as importance sampling. Since Values sampled from region 1 have more impact, they should be sampled more frequently. So the correction step is very simple, every sample generated using q(x) is multiplied by a weight w(x)= p(x)/q(x) to account for the importance weight.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+
+
+&lt;div id="outline-container-org458f397" class="outline-2"&gt;
+&lt;h2 id="org458f397"&gt;IV. Source of Randomness&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org458f397"&gt;
+&lt;/div&gt;
+&lt;div id="outline-container-orgc6998f5" class="outline-3"&gt;
+&lt;h3 id="orgc6998f5"&gt;Random Variate Generation&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc6998f5"&gt;
+&lt;p&gt;
+Here we look at generating random variates from probability distribution.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org9d3fc22" class="outline-4"&gt;
+&lt;h4 id="org9d3fc22"&gt;The Inversion Method&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org9d3fc22"&gt;
+&lt;p&gt;
+Rembembering that a randon variable is a function that takes as an input a numerical value and returns a probability. If this function is inverset, we get a function that takes a probability and returns a numerical value. 
+For this to work, invertinga CDF of an exponentional random variable for example, hs to give exactly only one number on the x-axis. On the other hand, the inversion method works differently on discrete random variables. In that case the relationship is many-to-one, that is multiple random numbers can be mapped onto one random variate.
+Finally it should be emphasized that only CDFs of continous random variables and PMF of discrete random variables can be inversed. This is because these two functions are actual probability functions. The PDF of a continous random variable is a not a probability function since it can take values greater than one.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgb4e9f1d" class="outline-4"&gt;
+&lt;h4 id="orgb4e9f1d"&gt;The rejection method&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgb4e9f1d"&gt;
+&lt;p&gt;
+The inversion method fails if you do not have a closed-form expression for the CDF. it can stilll be possible to approcximate the CDF but this requires a significant amount of computational time. 
+Because of these two reasons, the rejection method was invented.
+In this method, the PDF of the random variable is used instead of the CDF. 
+In this method, x is randomly assigned a value from its set of vlues. Then a uniform number is generated and then used in the comparison.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org25315c8" class="outline-4"&gt;
+&lt;h4 id="org25315c8"&gt;The Composition Method&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org25315c8"&gt;
+&lt;p&gt;
+An interesting fact is that the linear combination of CDFs, PDFs, or PMFs is also a CFD, PDF or PMF, repsectively. The only requirement is that the weights used in the combinations should add up to one. Hence, a probability distribution can be represented as a mixture of simpler probability distribution functions.
+The Composition Method works as follows. First, the probability function is decomposed into a weighted sum of K simpler probability functions.
+Secondly, one of the probability distribution that appear in the composition is randomly selected. f&lt;sub&gt;i&lt;/sub&gt; is selected with probability p&lt;sub&gt;i&lt;/sub&gt;. Finally, a sample is generated using the selected probability distribution function by using either the inversion or rejection method.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgde9240d" class="outline-4"&gt;
+&lt;h4 id="orgde9240d"&gt;The convolution method&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgde9240d"&gt;
+&lt;p&gt;
+Consider a random variable Y whose probability distributon is complex and thus it is not possible to sample from it. However, this random variable can be expressed as a sum of K random variables whose probability distribution can be different but they are easy to sample from. in this case, the convolution method can be used to generate samples of Y.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org0b575e0" class="outline-4"&gt;
+&lt;h4 id="org0b575e0"&gt;Specialized methods&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org0b575e0"&gt;
+&lt;p&gt;
+The Poisson distribution is typically used to model the arrivals in a communication system. 
+The Normal distribution is another methods which can be used for this.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgc366bbf" class="outline-3"&gt;
+&lt;h3 id="orgc366bbf"&gt;Random Number Generation&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgc366bbf"&gt;
+&lt;p&gt;
+Random numbers are usind in the generation of random variates. A random number u is uniformly distributed between 0 and 1.
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org2773d74" class="outline-4"&gt;
+&lt;h4 id="org2773d74"&gt;Pseudo-random&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org2773d74"&gt;
+&lt;p&gt;
+Random Numbers generated by a random number generator must follow a uniform distribution. In addition it must have the following charateristics:
+mean = 1/2
+Variance = 1/12
+Expectation of the autocorrelation = 1/4
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orge9dfb7c" class="outline-4"&gt;
+&lt;h4 id="orge9dfb7c"&gt;Characteristic of a good generator&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orge9dfb7c"&gt;
+&lt;p&gt;
+RNGs are the main source of randomness in simulation programs. They are actually programs whose behaviour is deterministic. Once its initial state (called the seed) is set, a RNG produces a deterministic and periodic sequence of numbers. This is why they are called pseudo-random. 
+Other deisred characteristic of a good RNG are uniformity and independence.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgafc90bc" class="outline-4"&gt;
+&lt;h4 id="orgafc90bc"&gt;A Bit of Number Theory&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orgafc90bc"&gt;
+&lt;/div&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a id="org8a7a92a"&gt;&lt;/a&gt;Prime numbers&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org8a7a92a"&gt;
+&lt;p&gt;
+A Prime number is a positive integer that is greater than one and has two divisor only: one and itself.
+3, 5, 7, 11, 13, 17, 19, 23, …
+Prime numbers are crucial in random number generation. Parameters of RNG algorithms are often recommended to be large prime numbers.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org633f393"&gt;&lt;/a&gt;The modulo operator&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org633f393"&gt;
+&lt;p&gt;
+The modulo operation finds the remainder of the division of one integer number by another. 
+The modulo is computed as follow:
+m = a - floor(a/b) * b
+where b &amp;gt; 0
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org85a51fd"&gt;&lt;/a&gt;Primitive roots for a prime number&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org85a51fd"&gt;
+&lt;p&gt;
+For a prime number p, the number b is one of its primitive roots if the set of powers of b (e.g. b&lt;sup&gt;0&lt;/sup&gt;, b&lt;sup&gt;1&lt;/sup&gt;, b&lt;sup&gt;2&lt;/sup&gt;, …) includes all the numbers in the set {1, 2, 3, …. , p-1}, which is the set of all possible remainder except 0.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org046d9dc"&gt;&lt;/a&gt;The Linear congruential method&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org046d9dc"&gt;
+&lt;p&gt;
+This method is one of the most popular one. consider the following relation:
+X&lt;sub&gt;n+1&lt;/sub&gt;=(a.X&lt;sub&gt;n&lt;/sub&gt;+c) mod m, n≥0
+where a, c and m are called multiplier, increment and modulus respectively.
+the initial X&lt;sub&gt;0&lt;/sub&gt; is referred to as the seed. Then random number u&lt;sub&gt;n&lt;/sub&gt; is obtained as follows:
+u&lt;sub&gt;n&lt;/sub&gt; = X&lt;sub&gt;n&lt;/sub&gt; / m
+Clearly if a, c and m are fixed, then different seeds would give different sequences of random numbers. For every run, the seed must be recorder, this is important if the simulation run is to be exactly reproduced/ replicated.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org2dc1a80"&gt;&lt;/a&gt;Prime modulus&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org2dc1a80"&gt;
+&lt;p&gt;
+A multiplicative RNG with a prime modulus will achieve the maximum period if the multiplier a is a primitive root for M.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orge45f32a" class="outline-4"&gt;
+&lt;h4 id="orge45f32a"&gt;Linear Feedback Shift Registers&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-orge45f32a"&gt;
+&lt;p&gt;
+A Linear Feedback Shift Register (LFSR) is a digital device that consists of memory cells  and exclusive-OF (XOR) gates. it can generate a sequence of random binary numbers.
+For the four-bit LFSR, its characteristic polynomial is c(x) = 1 + x&lt;sup&gt;3&lt;/sup&gt; + x&lt;sup&gt;4&lt;/sup&gt; and it is constructed as follows:
+&lt;/p&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Since the characteristic polynomial is of degree n = 4, then four memory cells are required&lt;/li&gt;
+&lt;li&gt;Each term present in the characteristic polynomial (except x&lt;sup&gt;0&lt;/sup&gt; and x&lt;sup&gt;n&lt;/sup&gt;) corresponds to an XOR gate. In this case, an XOR gate is inserted between memory cell one and zero since this place corresponds to x&lt;sup&gt;3&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;An initial binary number is loaded into the memory cells (i.e. seed)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;
+Now the LFSR is ready and random binary numbers can be generated.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org267887d" class="outline-4"&gt;
+&lt;h4 id="org267887d"&gt;Statistical testing of RNG&lt;/h4&gt;
+&lt;div class="outline-text-4" id="text-org267887d"&gt;
+&lt;p&gt;
+Typically a sequence of random numbers is acepted if it stisfies two conditions: uniformity and independence. Two standard statistical tests are used for checking these two conditions. The first test is referred to as the chi-squared test (χ&lt;sup&gt;2&lt;/sup&gt; test). Thi test ensures that no number occurs more often than the other numbers. This way the numbers are uniformly distributed. 
+The second test which is referred to as the poker test ensures that there is no correlation between the successive random numbers. This way the numbers are independent from each other. A RNG is accepted if it passes these two tests. 
+&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;&lt;a id="org0058b06"&gt;&lt;/a&gt;The Chi-Squared Test&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org0058b06"&gt;
+&lt;p&gt;
+This test is mainly used for determining how well the observed data fit the theorethically expected data. The test performed as follows:
+&lt;/p&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Divide the interval [0, 1[ into K non-overlapping subintervals of equal length.&lt;/li&gt;
+&lt;li&gt;Determine O&lt;sub&gt;i&lt;/sub&gt; for each subinterval i, where o&lt;sub&gt;i&lt;/sub&gt; is the number of random numbers that fall in subinterval i and 1 ≤ i ≤ K&lt;/li&gt;
+&lt;li&gt;Determine E&lt;sub&gt;i&lt;/sub&gt; for each subinterval i, where E&lt;sub&gt;i&lt;/sub&gt; is the expected number of random numbers that should fall in subinterval i&lt;/li&gt;
+&lt;li&gt;Compute the Chi-Squared statistic χ&lt;sup&gt;2&lt;/sup&gt; given by the equation&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+$ χ&lt;sup&gt;2&lt;/sup&gt; = ∑&lt;sup&gt;K&lt;/sup&gt;&lt;sub&gt;i=1&lt;/sub&gt; \frac{(O_i - E_i)^2}{E_i} $
+&lt;/p&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;For a level of significance α, if χ&lt;sup&gt;2&lt;/sup&gt; ≤ χ&lt;sup&gt;2&lt;/sup&gt;&lt;sub&gt;K-1,1-α&lt;/sub&gt; then it is concluded that the random numbers in the given sequence are uniformaly distributed with ((1-α) x 100)% level of confidence.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="org7f0d172"&gt;&lt;/a&gt;The Poker Test&lt;br&gt;
+&lt;div class="outline-text-5" id="text-org7f0d172"&gt;
+&lt;p&gt;
+A sequence of random numbers might be uniformly distributed and yet not random. This because because the random numbers may be related. The poker test is used to detect any such relationship. However, before applying the poker test, the sequence of random numbers must be pre-processed using the following two steps:
+&lt;/p&gt;
+&lt;ol class="org-ol"&gt;
+&lt;li&gt;Remove the decimal pojnt in every rando number&lt;/li&gt;
+&lt;li&gt;Choose the first five digits in every random number. You may need to round the numbers.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+Following the above procedure, we will end up with a sequence of five digit numbers. 
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+
+&lt;li&gt;&lt;a id="orga7a59b7"&gt;&lt;/a&gt;The Spectral Test&lt;br&gt;
+&lt;div class="outline-text-5" id="text-orga7a59b7"&gt;
+&lt;p&gt;
+The test is used for detecting correlations among random numbers. Basically, the random numbers are grouped into triplets. These triplets are plotted in 3D space.
+Planes will emerge if the random numbers are correlted.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>CompSci</category><guid>https://kelianf.github.io/posts/computer-simulation-a-foundational-approach/</guid><pubDate>Fri, 27 Aug 2021 05:53:56 GMT</pubDate></item><item><title>A Hunger Artist</title><link>https://kelianf.github.io/posts/the-hunger-artist/</link><dc:creator>Kelian</dc:creator><description>&lt;div&gt;&lt;p&gt;Recently red A Hunger Artist by Kafka.&lt;/p&gt;
 &lt;p&gt;Outside of all possible meaning that one could ascibe to it, from religious to sarcastic passing by autobiographic. My perspective was about the beauty of consuming oneself by only one thing. This might be called apassion or a calling, but the important part is that in this short novel the protagonist does not have a choice, as there was nothing else that he 'enjoyed'.&lt;/p&gt;
 &lt;p&gt;Hereunder is the short story. (Ian Johnston translation)&lt;/p&gt;
 &lt;ul class="simple"&gt;
