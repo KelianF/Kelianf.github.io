@@ -1,0 +1,24 @@
+#+BEGIN_COMMENT
+.. title: FX Series - Intro
+.. slug: fx-series-intro
+.. date: 2021-10-08 03:35:52 UTC-04:00
+.. tags: Finance, FX
+.. category: Finance, FX
+.. link: 
+.. description: 
+.. type: text
+
+#+END_COMMENT
+
+
+This is the start of a series on FX, the goal is to have a top down approach of this asset class, starting with the History, structure and economy of this asset class, then later dive down the diffrerent instruments and strategies.
+
+* Introduction
+
+
+
+
+
+
+* Reference 
+Shamah, S. 2008. A Foreign Exchange Primer.

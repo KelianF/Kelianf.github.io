@@ -19,7 +19,11 @@
  </sitemap>
  <sitemap>
   <loc>https://kelianf.github.io/categories/cat_compsci.xml</loc>
-  <lastmod>2021-09-21T09:36:00Z</lastmod>
+  <lastmod>2021-09-21T09:43:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://kelianf.github.io/categories/cat_finance-fx.xml</loc>
+  <lastmod>2021-11-16T21:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://kelianf.github.io/categories/cat_mathematics.xml</loc>
@@ -27,11 +31,19 @@
  </sitemap>
  <sitemap>
   <loc>https://kelianf.github.io/categories/compsci.xml</loc>
-  <lastmod>2021-09-21T09:36:00Z</lastmod>
+  <lastmod>2021-09-21T09:43:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://kelianf.github.io/categories/emacs.xml</loc>
   <lastmod>2021-06-10T10:21:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://kelianf.github.io/categories/finance.xml</loc>
+  <lastmod>2021-11-16T21:42:00Z</lastmod>
+ </sitemap>
+ <sitemap>
+  <loc>https://kelianf.github.io/categories/fx.xml</loc>
+  <lastmod>2021-11-16T21:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://kelianf.github.io/categories/mathematics.xml</loc>
@@ -47,10 +59,10 @@
  </sitemap>
  <sitemap>
   <loc>https://kelianf.github.io/rss.xml</loc>
-  <lastmod>2021-09-21T09:36:00Z</lastmod>
+  <lastmod>2021-11-16T21:42:00Z</lastmod>
  </sitemap>
  <sitemap>
   <loc>https://kelianf.github.io/sitemap.xml</loc>
-  <lastmod>2021-09-21T09:36:00Z</lastmod>
+  <lastmod>2021-11-16T21:42:00Z</lastmod>
  </sitemap>
 </sitemapindex>

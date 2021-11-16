@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS (Posts about Finance)</title><link>https://kelianf.github.io/</link><description></description><atom:link href="https://kelianf.github.io/categories/finance.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Tue, 16 Nov 2021 21:42:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>FX Series - Intro</title><link>https://kelianf.github.io/posts/fx-series-intro/</link><dc:creator>Kelian</dc:creator><description>&lt;p&gt;
+This is the start of a series on FX, the goal is to have a top down approach of this asset class, starting with the History, structure and economy of this asset class, then later dive down the diffrerent instruments and strategies.
+&lt;/p&gt;
+
+&lt;div id="outline-container-org867034d" class="outline-2"&gt;
+&lt;h2 id="org867034d"&gt;Introduction&lt;/h2&gt;
+&lt;/div&gt;
+
+
+
+
+
+
+&lt;div id="outline-container-orgb61b69b" class="outline-2"&gt;
+&lt;h2 id="orgb61b69b"&gt;Reference&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb61b69b"&gt;
+&lt;p&gt;
+Shamah, S. 2008. A Foreign Exchange Primer.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>Finance</category><category>FX</category><guid>https://kelianf.github.io/posts/fx-series-intro/</guid><pubDate>Fri, 08 Oct 2021 07:35:52 GMT</pubDate></item></channel></rss>
