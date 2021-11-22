@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS (Posts about CompSci)</title><link>https://kelianf.github.io/</link><description></description><atom:link href="https://kelianf.github.io/categories/compsci.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Tue, 21 Sep 2021 09:43:24 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Computer Simulation: A Foundational Approach</title><link>https://kelianf.github.io/posts/computer-simulation-a-foundational-approach/</link><dc:creator>Kelian</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS (Posts about CompSci)</title><link>https://kelianf.github.io/</link><description></description><atom:link href="https://kelianf.github.io/categories/compsci.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Mon, 22 Nov 2021 13:44:32 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>Starting an application with a specified number of core</title><link>https://kelianf.github.io/posts/starting-an-application-with-a-specified-number-of-core/</link><dc:creator>Kelian</dc:creator><description>&lt;p&gt;
+Some programs cannot be run with more than x number of core, for power reasons or because of a specific license. This is the case of Q/KdB which has, with the free individual version, a maximum of 16 possible cores.
+&lt;/p&gt;
+
+&lt;p&gt;
+In windows, the solution for this is the following command line:
+&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span&gt;&lt;/span&gt;start /affinity 1 q.exe
+&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;
+This will start q with only one core. The number of core is defined in hex number.
+so, if we want 4 cores we have to select 'F', if we want 8 'FF' and finally 16 would be 'FFFF'.
+&lt;/p&gt;</description><category>CompSci</category><guid>https://kelianf.github.io/posts/starting-an-application-with-a-specified-number-of-core/</guid><pubDate>Mon, 22 Nov 2021 13:34:12 GMT</pubDate></item><item><title>Computer Simulation: A Foundational Approach</title><link>https://kelianf.github.io/posts/computer-simulation-a-foundational-approach/</link><dc:creator>Kelian</dc:creator><description>&lt;p&gt;
 The book is separated in Five parts: I. The Fundamentals, II. Managing Complexity, III. Problem Solving, IV. Scources of Randomness.
 &lt;/p&gt;
 

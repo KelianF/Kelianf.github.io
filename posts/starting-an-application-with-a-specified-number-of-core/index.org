@@ -1,0 +1,23 @@
+#+BEGIN_COMMENT
+.. title: Starting an application with a specified number of core
+.. slug: starting-an-application-with-a-specified-number-of-core
+.. date: 2021-11-22 08:34:12 UTC-05:00
+.. tags: CompSci
+.. category: CompSci
+.. link: 
+.. description: 
+.. type: text
+
+#+END_COMMENT
+
+
+Some programs cannot be run with more than x number of core, for power reasons or because of a specific license. This is the case of Q/KdB which has, with the free individual version, a maximum of 16 possible cores.
+
+In windows, the solution for this is the following command line:
+#+begin_src bash
+start /affinity 1 q.exe
+#+end_src
+
+This will start q with only one core. The number of core is defined in hex number.
+so, if we want 4 cores we have to select 'F', if we want 8 'FF' and finally 16 would be 'FFFF'.
+

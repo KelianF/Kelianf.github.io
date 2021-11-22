@@ -11,7 +11,7 @@
 <meta name="generator" content="Nikola (getnikola.com)">
 <link rel="alternate" type="application/rss+xml" title="RSS" hreflang="en" href="rss.xml">
 <link rel="canonical" href="https://kelianf.github.io/">
-<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/fx-series-intro/" type="text/html">
+<!--[if lt IE 9]><script src="assets/js/html5.js"></script><![endif]--><link rel="prefetch" href="posts/starting-an-application-with-a-specified-number-of-core/" type="text/html">
 </head>
 <body>
 <a href="#content" class="sr-only sr-only-focusable">Skip to main content</a>
@@ -68,7 +68,38 @@
     
         
     <div class="postindex">
-            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/fx-series-intro/" class="u-url">FX Series - Intro</a></h1>
+            <article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/starting-an-application-with-a-specified-number-of-core/" class="u-url">Starting an application with a specified number of core</a></h1>
+                <div class="metadata">
+                    <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
+                        Kelian
+                    </span></p>
+            <p class="dateline">
+            <a href="posts/starting-an-application-with-a-specified-number-of-core/" rel="bookmark">
+            <time class="published dt-published" datetime="2021-11-22T08:34:12-05:00" itemprop="datePublished" title="2021-11-22 08:34">2021-11-22 08:34</time></a>
+            </p>
+                        <p class="commentline">
+        
+
+
+                </p>
+</div>
+            </header><div class="e-content entry-content">
+                    <p>
+Some programs cannot be run with more than x number of core, for power reasons or because of a specific license. This is the case of Q/KdB which has, with the free individual version, a maximum of 16 possible cores.
+</p>
+
+<p>
+In windows, the solution for this is the following command line:
+</p>
+<div class="highlight"><pre><span></span>start /affinity 1 q.exe
+</pre></div>
+
+<p>
+This will start q with only one core. The number of core is defined in hex number.
+so, if we want 4 cores we have to select 'F', if we want 8 'FF' and finally 16 would be 'FFFF'.
+</p>
+                </div>
+            </article><article class="h-entry post-text" itemscope="itemscope" itemtype="http://schema.org/Article"><header><h1 class="p-name entry-title"><a href="posts/fx-series-intro/" class="u-url">FX Series - Intro</a></h1>
                 <div class="metadata">
                     <p class="byline author vcard"><span class="byline-name fn" itemprop="author">
                         Kelian
