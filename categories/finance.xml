@@ -1,20 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS (Posts about Finance)</title><link>https://kelianf.github.io/</link><description></description><atom:link href="https://kelianf.github.io/categories/finance.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Tue, 16 Nov 2021 21:42:52 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>FX Series - Intro</title><link>https://kelianf.github.io/posts/fx-series-intro/</link><dc:creator>Kelian</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS (Posts about Finance)</title><link>https://kelianf.github.io/</link><description></description><atom:link href="https://kelianf.github.io/categories/finance.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Sat, 27 Nov 2021 02:59:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>FX Series - Intro</title><link>https://kelianf.github.io/posts/fx-series-intro/</link><dc:creator>Kelian</dc:creator><description>&lt;p&gt;
 This is the start of a series on FX, the goal is to have a top down approach of this asset class, starting with the History, structure and economy of this asset class, then later dive down the diffrerent instruments and strategies.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org867034d" class="outline-2"&gt;
-&lt;h2 id="org867034d"&gt;Introduction&lt;/h2&gt;
+&lt;div id="outline-container-org2357abf" class="outline-2"&gt;
+&lt;h2 id="org2357abf"&gt;Introduction&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org2357abf"&gt;
+&lt;p&gt;
+Foreign Exchange is by far the largest market in the world, with an estimated $6.6 trillion average daily turnover (as of 2019). It is distinguished from the commodity or equity maarket by having no fixed base, it is not located in a building and is not limited by fixed trading hours.
+A Foreign Exchange transaction is a contract to exchange one currency foor another currency at an agreed rate on an agreed date.
+&lt;/p&gt;
+
+&lt;p&gt;
+The first forward foreign exchange transactions can be traced back to the money-changers in Lombardy in the 1500s. Foreign exchange, as we know it today, has its roots in the gold standard, which was introduced in 1880. It was a system of fixed exchange rates in relation to gold and the absence of any exchange control.
+&lt;/p&gt;
+
+&lt;p&gt;
+Banking and financial markets closer to those of today were started in the coffee houses of European financial centers, such as the City of London. In the seventeenth century these cofee houses became ther meeting places not only of merchants seeking to trade their finished goods, but also of those who brought and sold solely for profit. It was the City of London's domination of these early markets that saw it maturing through the powerful late Victorian era, and it was strong enough to survive two world wars and the depression of the 1930s.
+&lt;/p&gt;
 &lt;/div&gt;
 
+&lt;div id="outline-container-orgda19f1c" class="outline-3"&gt;
+&lt;h3 id="orgda19f1c"&gt;Spot, Forward and more&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-orgda19f1c"&gt;
+&lt;p&gt;
+A Spot transaction is where the delivery  of the currency is two business days from trade date (except the canadian dollar, which is one day).
+A Forward transaction is any transaction that settles on a date beyond spot.
+A Currency future obligates its owner to purchase a specified asset at a specified exercise price on the contract maturity date.
+An option gives the owner the right but not the obligation to buy annd sell a specified quantity of a currency at a specified rate on or before a specified date.
+A foreign currency swap is where two currencies a exchanged for an agreed period of time annd re-exchanged at maturity at the same exchange rate.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
-
-
-
-
-&lt;div id="outline-container-orgb61b69b" class="outline-2"&gt;
-&lt;h2 id="orgb61b69b"&gt;Reference&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgb61b69b"&gt;
+&lt;div id="outline-container-orgabe7b1b" class="outline-2"&gt;
+&lt;h2 id="orgabe7b1b"&gt;Reference&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgabe7b1b"&gt;
 &lt;p&gt;
 Shamah, S. 2008. A Foreign Exchange Primer.
 &lt;/p&gt;
