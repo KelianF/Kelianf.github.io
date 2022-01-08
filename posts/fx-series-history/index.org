@@ -1,0 +1,75 @@
+#+BEGIN_COMMENT
+.. title: fx-series-history
+.. slug: fx-series-history
+.. date: 2022-01-02 07:33:16 UTC-05:00
+.. tags: Finance, FX
+.. category: Finance, FX
+.. link: 
+.. description: 
+.. type: text
+
+#+END_COMMENT
+
+
+* Exchange Rate Agreement
+
+This is the framework in which a monetary authority namages its currency in relation to other currencies. All the different FX rate can be compartimentized in 4 categories according the the IMF: hard peg, soft peg, free floating and residual.
+
+The main monetary authority for each currency would be represented by a central bank. The primary objectives of a central bank are:
+- Monitoring and managing monetary and credit conditions (through monetary policy)
+- The pursuit of full or maximum level of employment
+- Maintaining stable prices
+- Preserving the purchasing power of the currency (reducing vol of fx rate)
+- Issuing bank notes or currency consistent with economic policy
+- Encouraging moderate long terminterest rates or controlling the money supply
+- Promoting real or sustainable economic growth and development 
+- Improving welfare of its citizens
+- Ensuring the soundness and stability of the banking and financial system
+- Providing Financial Services
+- Supporting smooth operation of the payment system
+
+One of the biggest shift in the history of the FX market is the creation of the Euro currency.
+Thus here is a quick revie of the conditions set by the ECB to join it:
+- Price stability: The inflation rate cannot be higher than 1.5% above the ratee of the three best-performing memeber state
+- Sound and sustainable public finance: The country should not be under the excessive deficit procedure
+- Exchange-rate stability: The country has to participate in the Exchange Rate Mechanism (ERM II) for at least two years, without strong deviations from the ERM central rate and without devaluing its currency bilateral central rate against the euro in the same period
+- Long term interest rate: The long term interest rate should not be higher than 2% above the rate of the three best performing member state in term of price stability
+
+* Brief history of the FX Market
+
+The recent history of the FX Market can be divided into five major periods:
+1800's - 1914:  Classical Gold Standard
+1914 - 1943:    Interim instability
+1944 - 1973:    Bretton Woods system
+1973 - present: Recent float
+
+Chronology:
+
+1820: Britain adopted Gold standard
+1871: Germany adopted Gold standard
+1876: France adopted Gold standard
+1879: USA adopted Gold standard
+
+1914 - 1918: WWI, $1 was worth 8 Marks at that time
+Nov 1923: Germany debased its currency to repay its reparation payment, t that time $1 = 4.2 trillion Marks
+1933 : 25% of US workforce unemployed; US Presidend abandonned Gold standard; US pegged the price of Gold to $35 per ounce, the peg remained until 1971
+Jul 1944: Bretton Woods Conference, led to the creation of the IMF and the International Bank for Reconstruction and Development (which later became the WorldBank and BIS)
+1967: GBP Devaluation by 14%
+1968: US deep in Vietnam war, financed by the printing press
+1971: Nixon increased 1 ounce of gold first to $38 then again to $42; Smithsonian agreement (Attempt to repair Bretton Woods agreements, Widening the band from 1% to 2.25%)
+1972: EEC currencies tight bands (snake) died
+1978/9: European monetary system was established; implementation of ERM
+1992: Soros attack of the GBP, UK out of ERM
+Feb 7 1992 The Maastricht Treaty replaced the old European Economic Community (EEC)
+1993: Widening of bands from 2.25% to 15% (Currencies were effectively floating)
+1997: Currency crisis in Asia (Starting in Thailand)
+Jan 1999: First step in the implementation of Euro
+
+2001: Turkish Lira Crisis
+Mar 2002: Euro Finalized and implemented
+2002 Argentine Peso Crisis
+
+* Reference
+Shamah, S., 2001. A foreign exchange primer.
+Wang, P., 2009. The economic of foreign exchange and global finance.
+Weithers, T., 2011. Foreign exchange: a practical guide to the FX markets.

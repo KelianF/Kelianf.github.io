@@ -1,14 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
-<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS (Posts about Finance, FX)</title><link>https://kelianf.github.io/</link><description></description><atom:link href="https://kelianf.github.io/categories/cat_finance-fx.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2021 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Sat, 27 Nov 2021 02:59:05 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>FX Series - Intro</title><link>https://kelianf.github.io/posts/fx-series-intro/</link><dc:creator>Kelian</dc:creator><description>&lt;p&gt;
+<?xml-stylesheet type="text/xsl" href="../assets/xml/rss.xsl" media="all"?><rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>SQS (Posts about Finance, FX)</title><link>https://kelianf.github.io/</link><description></description><atom:link href="https://kelianf.github.io/categories/cat_finance-fx.xml" rel="self" type="application/rss+xml"></atom:link><language>en</language><copyright>Contents © 2022 &lt;a href="mailto:kelianferhat@gmail.com"&gt;Kelian&lt;/a&gt; </copyright><lastBuildDate>Sat, 08 Jan 2022 06:47:11 GMT</lastBuildDate><generator>Nikola (getnikola.com)</generator><docs>http://blogs.law.harvard.edu/tech/rss</docs><item><title>fx-series-history</title><link>https://kelianf.github.io/posts/fx-series-history/</link><dc:creator>Kelian</dc:creator><description>&lt;div id="outline-container-org5bfbe4c" class="outline-2"&gt;
+&lt;h2 id="org5bfbe4c"&gt;Exchange Rate Agreement&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org5bfbe4c"&gt;
+&lt;p&gt;
+This is the framework in which a monetary authority namages its currency in relation to other currencies. All the different FX rate can be compartimentized in 4 categories according the the IMF: hard peg, soft peg, free floating and residual.
+&lt;/p&gt;
+
+&lt;p&gt;
+The main monetary authority for each currency would be represented by a central bank. The primary objectives of a central bank are:
+&lt;/p&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Monitoring and managing monetary and credit conditions (through monetary policy)&lt;/li&gt;
+&lt;li&gt;The pursuit of full or maximum level of employment&lt;/li&gt;
+&lt;li&gt;Maintaining stable prices&lt;/li&gt;
+&lt;li&gt;Preserving the purchasing power of the currency (reducing vol of fx rate)&lt;/li&gt;
+&lt;li&gt;Issuing bank notes or currency consistent with economic policy&lt;/li&gt;
+&lt;li&gt;Encouraging moderate long terminterest rates or controlling the money supply&lt;/li&gt;
+&lt;li&gt;Promoting real or sustainable economic growth and development&lt;/li&gt;
+&lt;li&gt;Improving welfare of its citizens&lt;/li&gt;
+&lt;li&gt;Ensuring the soundness and stability of the banking and financial system&lt;/li&gt;
+&lt;li&gt;Providing Financial Services&lt;/li&gt;
+&lt;li&gt;Supporting smooth operation of the payment system&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;
+One of the biggest shift in the history of the FX market is the creation of the Euro currency.
+Thus here is a quick revie of the conditions set by the ECB to join it:
+&lt;/p&gt;
+&lt;ul class="org-ul"&gt;
+&lt;li&gt;Price stability: The inflation rate cannot be higher than 1.5% above the ratee of the three best-performing memeber state&lt;/li&gt;
+&lt;li&gt;Sound and sustainable public finance: The country should not be under the excessive deficit procedure&lt;/li&gt;
+&lt;li&gt;Exchange-rate stability: The country has to participate in the Exchange Rate Mechanism (ERM II) for at least two years, without strong deviations from the ERM central rate and without devaluing its currency bilateral central rate against the euro in the same period&lt;/li&gt;
+&lt;li&gt;Long term interest rate: The long term interest rate should not be higher than 2% above the rate of the three best performing member state in term of price stability&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-orgb5d8770" class="outline-2"&gt;
+&lt;h2 id="orgb5d8770"&gt;Brief history of the FX Market&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orgb5d8770"&gt;
+&lt;p&gt;
+The recent history of the FX Market can be divided into five major periods:
+1800's - 1914:  Classical Gold Standard
+1914 - 1943:    Interim instability
+1944 - 1973:    Bretton Woods system
+1973 - present: Recent float
+&lt;/p&gt;
+
+&lt;p&gt;
+Chronology:
+&lt;/p&gt;
+
+&lt;p&gt;
+1820: Britain adopted Gold standard
+1871: Germany adopted Gold standard
+1876: France adopted Gold standard
+1879: USA adopted Gold standard
+&lt;/p&gt;
+
+&lt;p&gt;
+1914 - 1918: WWI, $1 was worth 8 Marks at that time
+Nov 1923: Germany debased its currency to repay its reparation payment, t that time $1 = 4.2 trillion Marks
+1933 : 25% of US workforce unemployed; US Presidend abandonned Gold standard; US pegged the price of Gold to $35 per ounce, the peg remained until 1971
+Jul 1944: Bretton Woods Conference, led to the creation of the IMF and the International Bank for Reconstruction and Development (which later became the WorldBank and BIS)
+1967: GBP Devaluation by 14%
+1968: US deep in Vietnam war, financed by the printing press
+1971: Nixon increased 1 ounce of gold first to $38 then again to $42; Smithsonian agreement (Attempt to repair Bretton Woods agreements, Widening the band from 1% to 2.25%)
+1972: EEC currencies tight bands (snake) died
+1978/9: European monetary system was established; implementation of ERM
+1992: Soros attack of the GBP, UK out of ERM
+Feb 7 1992 The Maastricht Treaty replaced the old European Economic Community (EEC)
+1993: Widening of bands from 2.25% to 15% (Currencies were effectively floating)
+1997: Currency crisis in Asia (Starting in Thailand)
+Jan 1999: First step in the implementation of Euro
+&lt;/p&gt;
+
+&lt;p&gt;
+2001: Turkish Lira Crisis
+Mar 2002: Euro Finalized and implemented
+2002 Argentine Peso Crisis
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div id="outline-container-org8a6abae" class="outline-2"&gt;
+&lt;h2 id="org8a6abae"&gt;Reference&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org8a6abae"&gt;
+&lt;p&gt;
+Shamah, S., 2001. A foreign exchange primer.
+Wang, P., 2009. The economic of foreign exchange and global finance.
+Weithers, T., 2011. Foreign exchange: a practical guide to the FX markets.
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description><category>Finance</category><category>FX</category><guid>https://kelianf.github.io/posts/fx-series-history/</guid><pubDate>Sun, 02 Jan 2022 12:33:16 GMT</pubDate></item><item><title>FX Series - Intro</title><link>https://kelianf.github.io/posts/fx-series-intro/</link><dc:creator>Kelian</dc:creator><description>&lt;p&gt;
 This is the start of a series on FX, the goal is to have a top down approach of this asset class, starting with the History, structure and economy of this asset class, then later dive down the diffrerent instruments and strategies.
 &lt;/p&gt;
 
-&lt;div id="outline-container-org2357abf" class="outline-2"&gt;
-&lt;h2 id="org2357abf"&gt;Introduction&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-org2357abf"&gt;
+&lt;div id="outline-container-org0acd2f5" class="outline-2"&gt;
+&lt;h2 id="org0acd2f5"&gt;Introduction&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-org0acd2f5"&gt;
 &lt;p&gt;
-Foreign Exchange is by far the largest market in the world, with an estimated $6.6 trillion average daily turnover (as of 2019). It is distinguished from the commodity or equity maarket by having no fixed base, it is not located in a building and is not limited by fixed trading hours.
-A Foreign Exchange transaction is a contract to exchange one currency foor another currency at an agreed rate on an agreed date.
+Foreign Exchange is by far the largest market in the world, with an estimated $6.6 trillion average daily turnover (as of 2019). It is distinguished from the commodity or equity market by having no fixed base, it is not located in a building and is not limited by fixed trading hours.
+A Foreign Exchange transaction is a contract to exchange one currency for another currency at an agreed rate on an agreed date.
 &lt;/p&gt;
 
 &lt;p&gt;
@@ -16,13 +109,13 @@ The first forward foreign exchange transactions can be traced back to the money-
 &lt;/p&gt;
 
 &lt;p&gt;
-Banking and financial markets closer to those of today were started in the coffee houses of European financial centers, such as the City of London. In the seventeenth century these cofee houses became ther meeting places not only of merchants seeking to trade their finished goods, but also of those who brought and sold solely for profit. It was the City of London's domination of these early markets that saw it maturing through the powerful late Victorian era, and it was strong enough to survive two world wars and the depression of the 1930s.
+Banking and financial markets closer to those of today were started in the coffee houses of European financial centers, such as the City of London. In the seventeenth century these coffee houses became ther meeting places not only of merchants seeking to trade their finished goods, but also of those who brought and sold solely for profit. It was the City of London's domination of these early markets that saw it maturing through the powerful late Victorian era, and it was strong enough to survive two world wars and the depression of the 1930s.
 &lt;/p&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgda19f1c" class="outline-3"&gt;
-&lt;h3 id="orgda19f1c"&gt;Spot, Forward and more&lt;/h3&gt;
-&lt;div class="outline-text-3" id="text-orgda19f1c"&gt;
+&lt;div id="outline-container-org3eee682" class="outline-3"&gt;
+&lt;h3 id="org3eee682"&gt;Spot, Forward and more&lt;/h3&gt;
+&lt;div class="outline-text-3" id="text-org3eee682"&gt;
 &lt;p&gt;
 A Spot transaction is where the delivery  of the currency is two business days from trade date (except the canadian dollar, which is one day).
 A Forward transaction is any transaction that settles on a date beyond spot.
@@ -34,9 +127,9 @@ A foreign currency swap is where two currencies a exchanged for an agreed period
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div id="outline-container-orgabe7b1b" class="outline-2"&gt;
-&lt;h2 id="orgabe7b1b"&gt;Reference&lt;/h2&gt;
-&lt;div class="outline-text-2" id="text-orgabe7b1b"&gt;
+&lt;div id="outline-container-orga477255" class="outline-2"&gt;
+&lt;h2 id="orga477255"&gt;Reference&lt;/h2&gt;
+&lt;div class="outline-text-2" id="text-orga477255"&gt;
 &lt;p&gt;
 Shamah, S. 2008. A Foreign Exchange Primer.
 &lt;/p&gt;
