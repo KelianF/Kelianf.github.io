@@ -103,3 +103,7 @@
 'render_posts:cache\\posts\\starting-an-application-with-a-specified-number-of-core.html', (231936, 496)
 'render_sources:output\\posts\\starting-an-application-with-a-specified-number-of-core\\index.org', (245760, 336)
 'render_pages:output\\posts\\starting-an-application-with-a-specified-number-of-core\\index.html', (250368, 5931)
+'render_taxonomies:output\\2022\\index.html', (265216, 2488)
+'render_pages:output\\posts\\fx-series-history\\index.html', (270848, 5743)
+'render_posts:cache\\posts\\fx-series-history.html', (280064, 385)
+'render_sources:output\\posts\\fx-series-history\\index.org', (288768, 263)
